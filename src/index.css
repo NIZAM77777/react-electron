@@ -1243,27 +1243,6 @@ html, body, #root {
   );
 }
 
-.facility-photo-screen::after {
-  content: '';
-  position: absolute;
-  z-index: 2;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 28%;
-  pointer-events: none;
-  background: linear-gradient(
-    180deg,
-    rgba(5, 38, 72, 0) 0%,
-    rgba(5, 38, 72, 0.3) 35%,
-    rgba(5, 38, 72, 0.62) 100%
-  );
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 34%, #000 100%);
-  mask-image: linear-gradient(180deg, transparent 0%, #000 34%, #000 100%);
-}
-
 .facility-photo-screen .fleet-detail-nav,
 .facility-photo-title,
 .facility-photo-points {
@@ -1312,6 +1291,19 @@ html, body, #root {
   display: flex;
   flex-direction: column;
   gap: 13px;
+}
+
+.facility-photo-points::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: -20px -28px;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.04);
+  -webkit-backdrop-filter: blur(6px) brightness(1.03);
+  backdrop-filter: blur(6px) brightness(1.03);
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 58%, rgba(0, 0, 0, 0.65) 78%, transparent 100%);
+  mask-image: radial-gradient(ellipse at center, #000 58%, rgba(0, 0, 0, 0.65) 78%, transparent 100%);
 }
 
 .facility-photo-point {

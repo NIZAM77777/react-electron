@@ -538,7 +538,6 @@ function CompanyScreen({ onOpenBoard }) {
   return (
     <div className="services-page">
       <div className="company-intro">
-        <p className="company-intro-kicker">COMPANY PROFILE</p>
         <h1>
           <span>KHALID FARAJ</span>
           <span>SHIPPING</span>

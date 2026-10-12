@@ -409,7 +409,7 @@ html, body, #root {
 .services-page h1 {
   margin: 0;
   font-family: Manrope, sans-serif;
-  font-size: 64px;
+  font-size: 34px;
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.01em;
@@ -565,7 +565,7 @@ html, body, #root {
   margin: 0;
   color: #fff;
   font-family: Manrope, sans-serif;
-  font-size: 50px;
+  font-size: 34px;
   font-weight: 800;
   line-height: 1.08;
   text-align: center;
@@ -674,7 +674,7 @@ html, body, #root {
   margin: 0;
   font-family: Manrope, sans-serif;
   color: #fff;
-  font-size: 58px;
+  font-size: 34px;
   font-weight: 800;
   line-height: 1.08;
   text-align: center;
@@ -755,7 +755,7 @@ html, body, #root {
   z-index: 3;
   margin: 0;
   font-family: Manrope, sans-serif;
-  font-size: 58px;
+  font-size: 34px;
   font-weight: 700;
   line-height: 1.05;
   text-align: center;
@@ -1055,11 +1055,7 @@ html, body, #root {
 }
 
 .company-bar {
-  width: 80px;
-  height: 4px;
-  margin-top: auto;
-  border-radius: 2px;
-  background: #19c5f5;
+  display: none;
 }
 /* COMPANY PROFILE HOVER */
 
@@ -1112,7 +1108,7 @@ html, body, #root {
   margin: 0;
   color: #fff;
   font-family: Manrope, sans-serif;
-  font-size: 50px;
+  font-size: 34px;
   font-weight: 800;
   line-height: 1.08;
   text-align: center;
@@ -1276,7 +1272,7 @@ html, body, #root {
   margin: 0;
   color: #fff;
   font-family: Manrope, sans-serif;
-  font-size: 50px;
+  font-size: 34px;
   font-weight: 800;
   line-height: 1.08;
   text-align: center;
@@ -1336,7 +1332,7 @@ html, body, #root {
 @media (max-width: 900px) {
   .facility-photo-title {
     top: 58px;
-    font-size: 36px;
+    font-size: 28px;
   }
 
   .facility-photo-screen .fleet-detail-nav {
@@ -1407,10 +1403,13 @@ html, body, #root {
 }
 
 .company-intro-rule {
+  position: relative;
+  z-index: 1;
   display: block;
   width: 72px;
   height: 3px;
-  margin: 18px auto 0;
+  margin: 24px auto -2px;
+  border-radius: 2px;
   background: #19c5f5;
 }
 
@@ -1423,12 +1422,32 @@ html, body, #root {
 }
 
 .company-intro-copy {
-  max-width: 760px;
-  margin: 18px auto 0;
+  position: relative;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 28px 48px 30px;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.16), rgba(223, 242, 255, 0.1));
   color: #fff;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
+  box-shadow: 0 12px 32px rgba(0, 43, 84, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  -webkit-backdrop-filter: blur(9px);
+  backdrop-filter: blur(9px);
+}
+
+.company-intro-copy::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  width: 110px;
+  height: 3px;
+  border-radius: 2px;
+  background: #19c5f5;
+  transform: translateX(-50%);
 }
 
 .company-stats {

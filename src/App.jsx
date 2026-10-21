@@ -178,7 +178,7 @@ function ServicesScreen({ onSelectDetail }) {
 
 const fleet = [
   {
-    label: 'LANDING CRAFT',
+    label: 'LANDING CRAFTS',
     detailTitle: 'LANDING CRAFTS',
     img: 'landing-craft',
     cx: 285,
@@ -193,7 +193,7 @@ const fleet = [
     ],
   },
   {
-    label: 'TUG BOAT',
+    label: 'TUG BOATS',
     detailTitle: 'TOW TUG BOATS AND ANCHOR HANDLING TUGS',
     img: 'tug-boats',
     cx: 825,
@@ -209,7 +209,7 @@ const fleet = [
     ],
   },
   {
-    label: 'BARGE',
+    label: 'BARGES',
     detailTitle: 'BARGES',
     img: 'barges',
     cx: 829,
@@ -224,7 +224,7 @@ const fleet = [
     ],
   },
   {
-    label: 'PASSENGER BOAT',
+    label: 'PASSENGER BOATS',
     detailTitle: 'PASSENGER BOATS',
     img: 'passenger-boats',
     cx: 540,
@@ -239,7 +239,7 @@ const fleet = [
     ],
   },
   {
-    label: 'CREW BOAT',
+    label: 'CREW BOATS',
     detailTitle: 'CREW BOATS',
     img: 'crew-boats',
     cx: 276,

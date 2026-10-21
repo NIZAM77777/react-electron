@@ -507,7 +507,7 @@ function FacilitiesScreen({ onSelectDetail }) {
           LMS ICAD II BASE
         </h2>
         <span className="services-rule facilities-rule anim" />
-        <p className="facilities-sub anim">88,408.55 SQ. M. OF INTEGRATED FACILITIES</p>
+        <p className="facilities-sub anim">90,000 SQ. M. OF INTEGRATED FACILITIES</p>
         <p className="facilities-hint anim">Explore the facilities below →</p>
       </div>
 

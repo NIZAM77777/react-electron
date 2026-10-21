@@ -179,6 +179,7 @@ function ServicesScreen({ onSelectDetail }) {
 const fleet = [
   {
     label: 'LANDING CRAFT',
+    detailTitle: 'LANDING CRAFTS',
     img: 'landing-craft',
     cx: 285,
     top: 205,
@@ -187,12 +188,13 @@ const fleet = [
     menuImage: './images/fleet/landing-craft-ortho-blue-white.png',
     detailImage: './images/fleet-details/landing-craft-new.jpg',
     specs: [
-      { label: 'LENGTH', value: '40–99 M', kind: 'ship', icon: 'length' },
-      { label: 'DEAD WEIGHT', value: '250–6,793 T', kind: 'box', icon: 'dead-weight' },
+      { label: 'LENGTH', value: '40–100 M', kind: 'ship', icon: 'length' },
+      { label: 'DWT', value: '250–6,793 DWT', kind: 'box', icon: 'dead-weight' },
     ],
   },
   {
     label: 'TUG BOAT',
+    detailTitle: 'TOW TUG BOATS AND ANCHOR HANDLING TUGS',
     img: 'tug-boats',
     cx: 825,
     top: 198,
@@ -201,13 +203,14 @@ const fleet = [
     menuImage: './images/fleet/tug-boats-ortho.png',
     detailImage: './images/fleet-details/tug-boats-new.jpg',
     specs: [
-      { label: 'LENGTH', value: '21.5–31 M', kind: 'ship', icon: 'length' },
-      { label: 'BOLLARD PULL', value: '10–35 T', kind: 'anchor' },
-      { label: 'POWER', value: '960–2,800 BHP', kind: 'settings', icon: 'power' },
+      { label: 'LENGTH', value: '21.5–37 M', kind: 'ship', icon: 'length' },
+      { label: 'BP', value: '15–60 T', kind: 'anchor' },
+      { label: 'BHP', value: '1200–4400 BHP', kind: 'settings', icon: 'power' },
     ],
   },
   {
     label: 'BARGE',
+    detailTitle: 'BARGES',
     img: 'barges',
     cx: 829,
     top: 492,
@@ -217,11 +220,12 @@ const fleet = [
     detailImage: './images/fleet-details/barges-new.png',
     specs: [
       { label: 'LENGTH', value: '52–76 M', kind: 'ship', icon: 'length' },
-      { label: 'DEAD WEIGHT', value: '1,800–4,670 T', kind: 'box', icon: 'dead-weight' },
+      { label: 'DWT', value: '1,800–5000 DWT', kind: 'box', icon: 'dead-weight' },
     ],
   },
   {
     label: 'PASSENGER BOAT',
+    detailTitle: 'PASSENGER BOATS',
     img: 'passenger-boats',
     cx: 540,
     top: 760,
@@ -236,6 +240,7 @@ const fleet = [
   },
   {
     label: 'CREW BOAT',
+    detailTitle: 'CREW BOATS',
     img: 'crew-boats',
     cx: 276,
     top: 505,
@@ -246,7 +251,7 @@ const fleet = [
     specs: [
       { label: 'LENGTH', value: '33.5–42 M', kind: 'ship', icon: 'length' },
       { label: 'CAPACITY', value: 'UP TO 282 PASSENGERS', kind: 'users' },
-      { label: 'DECK AREA', value: '110 M²', kind: 'box', icon: 'deck-area' },
+      { label: 'DECK AREA', value: '80 - 110 M²', kind: 'box', icon: 'deck-area' },
     ],
   },
 ];
@@ -357,7 +362,7 @@ function FleetDetailScreen({ fleetItem, onReturn, onHome }) {
           aria-hidden="true"
         />
 
-        <h1 className="fleet-photo-title">{fleetItem.label}</h1>
+        <h1 className="fleet-photo-title">{fleetItem.detailTitle || fleetItem.label}</h1>
 
         <div className={`fleet-detail-spec-panel fleet-detail-specs-${fleetItem.specs.length}`}>
           {fleetItem.specs.map((spec) => (
@@ -408,7 +413,7 @@ function FleetDetailScreen({ fleetItem, onReturn, onHome }) {
         <img
           className="fleet-reference-fullscreen"
           src={referenceImage}
-          alt={`${fleetItem.label} details`}
+          alt={`${fleetItem.detailTitle || fleetItem.label} details`}
           draggable="false"
         />
         <div className="fleet-reference-top-mask" aria-hidden="true" />
@@ -442,7 +447,7 @@ function FleetDetailScreen({ fleetItem, onReturn, onHome }) {
         <span>HOME</span>
       </button>
 
-      <h1 className="fleet-detail-title">{fleetItem.label}</h1>
+      <h1 className="fleet-detail-title">{fleetItem.detailTitle || fleetItem.label}</h1>
 
       <div className={`fleet-detail-spec-panel fleet-detail-specs-${fleetItem.specs.length}`}>
         {fleetItem.specs.map((spec) => (

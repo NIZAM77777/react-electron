@@ -534,7 +534,7 @@ function FacilitiesScreen({ onSelectDetail }) {
 }
 
 const companyStats = [
-  { lines: ['100+', 'VESSELS'], img: 'vessels', w: 100 },
+  { lines: ['116 +', 'VESSELS'], img: 'vessels', w: 100 },
   { lines: ['ABU DHABI', 'HEADQUARTERS'], img: 'headquarters', w: 140 },
   { lines: ['BOARD OF DIRECTORS'], img: 'directors', w: 125 },
 ];
@@ -544,14 +544,12 @@ function CompanyScreen({ onOpenBoard }) {
     <div className="services-page">
       <div className="company-intro">
         <h1>
-          <span>KHALID FARAJ</span>
-          <span>SHIPPING</span>
+          <span>KHALID FARAJ SHIPPING</span>
+          <span>L.L.C. – S.P.C.</span>
         </h1>
         <span className="company-intro-rule" aria-hidden="true" />
         <p className="company-intro-copy">
-          Khalid Faraj Shipping is an Abu Dhabi-based ship owner and operator supporting coastal
-          transportation and offshore civil, oil and gas projects. Its fleet includes landing craft,
-          tug boat, barge, crew boat and passenger boat, offshore support vessels and project carriers.
+          Khalid Faraj Shipping L.L.C. – S.P.C. is one of Abu Dhabi’s leading privately owned shipowners, vessel operators, and marine service providers. With a versatile fleet of 116 vessels, we deliver reliable maritime solutions across global waters, serving the offshore, oil and gas, dredging, and EPC segments.
         </p>
       </div>
       <div className="company-stats">

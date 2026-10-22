@@ -485,7 +485,6 @@ const facilities = [
   { label: 'SHIPYARD FACILITY', img: 'shipyard-facility', w: 262, detailImage: './images/facility-details/shipyard-new.jpeg' },
   { label: 'MARINE JETTY', detailTitle: 'JETTY FACILITY', img: 'marine-jetty', w: 255, icon: './images/facilities/marine-jetty-v2.png', detailImage: './images/facility-details/marine-jetty-new.jpeg' },
   { label: 'WORKSHOP & MAINTENANCE', img: 'workshop-maintenance', w: 140, icon: './images/facilities/workshop-maintenance-v2.png', detailImage: './images/facility-details/workshop-new.jpeg' },
-  { label: 'TRAVELIFT FACILITY', img: 'travelift-facility', w: 200, detailImage: './images/facility-details/travelift-new.jpeg' },
 ];
 
 const facilitySpriteIndex = {

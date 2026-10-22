@@ -114,9 +114,7 @@ const facilityPoints = {
     'A WELL-STRUCTURED FUNCTIONAL DEPARTMENT EMPLOYING THE BEST TALENT.',
   ],
   'warehouse-storage': [
-    'SECURE & WELL-ORGANIZED STORAGE',
-    'DEDICATED CAPACITY FOR GOODS & EQUIPMENT',
-    'EFFICIENT INVENTORY & MATERIAL FLOW',
+    'The warehouse covers an area of 6,000 sqm, providing secure and well-organized storage facilities with an efficient inventory management system and streamlined material flow.',
   ],
   'shipyard-facility': [
     'NEW VESSEL CONSTRUCTION',

@@ -590,7 +590,7 @@ function CompanyScreen({ onOpenBoard }) {
 const boardMembers = [
   { name: 'KHALFAN FARAJ AL MEHAIRBI', position: 'Chairman', image: './images/company/board/chairman-transparent.png' },
   { name: 'KHALID FARAJ AL MEHAIRBI', position: 'Founder Chairman', image: './images/company/board/founder-chairman-transparent.png' },
-  { name: 'VENU KRISHNA PILLAI', position: 'General Manager', image: './images/company/board/general-manager-transparent.png' },
+
   { name: 'MOHAMED FARAJ AL MEHAIRBI', position: 'Managing Director', image: './images/company/board/managing-director-transparent.png' },
 ];
 

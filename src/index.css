@@ -1563,3 +1563,11 @@ html, body, #root {
 .facility-photo-points-head-office {
   bottom: 70px;
 }
+
+
+/* Management Team icon matches the blue-white company profile styling. */
+.company-management-icon {
+  color: #dff8ff;
+  fill: rgba(16, 145, 255, 0.45);
+  filter: drop-shadow(0 8px 10px rgba(0, 40, 90, 0.4));
+}

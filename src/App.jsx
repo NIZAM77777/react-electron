@@ -538,7 +538,7 @@ const companyStats = [
   { lines: ['116 +', 'VESSELS'], img: 'vessels', w: 100 },
 ];
 
-function CompanyScreen({ onOpenBoard }) {
+function CompanyScreen({ onOpenBoard, onOpenManagement, onOpenVessels }) {
   return (
     <div className="services-page">
       <div className="company-intro">
@@ -554,13 +554,14 @@ function CompanyScreen({ onOpenBoard }) {
       <div className="company-stats">
         {companyStats.map((s, index) => (
           (() => {
-            const Stat = s.img === 'directors' ? 'button' : 'div';
-            const interactive = s.img === 'directors';
+            const interactive = true;
+            const onClick = s.img === 'directors' ? onOpenBoard : s.img === 'management' ? onOpenManagement : onOpenVessels;
 
-            return <Stat
+            return <button
             key={s.img}
-            className={`company-stat ${interactive ? 'company-stat-interactive' : 'company-stat-static'} anim`}
-            {...(interactive ? { onClick: onOpenBoard, type: 'button' } : {})}
+            type="button"
+            className={`company-stat company-stat-interactive anim`}
+            onClick={onClick}
           >
             <span className="company-icon-box">
               {s.img === 'management' ? (
@@ -579,10 +580,26 @@ function CompanyScreen({ onOpenBoard }) {
               ))}
             </span>
             <span className="company-bar" />
-            </Stat>;
+            </button>;
           })()
         ))}
       </div>
+    </div>
+  );
+}
+
+function CompanySubpageScreen({ title, onReturn, onHome }) {
+  return (
+    <div className="board-screen company-subpage-screen">
+      <button className="fleet-detail-nav fleet-detail-nav-back" onClick={onReturn} aria-label="Return">
+        <ChevronLeft size={26} strokeWidth={1.5} />
+        <span>RETURN</span>
+      </button>
+      <button className="fleet-detail-nav fleet-detail-nav-home" onClick={onHome} aria-label="Home">
+        <Home size={26} strokeWidth={1.5} />
+        <span>HOME</span>
+      </button>
+      <h1 className="board-title">{title}</h1>
     </div>
   );
 }
@@ -749,6 +766,7 @@ export default function App() {
   const [active, setActive] = useState(null);
   const [activeFleet, setActiveFleet] = useState(null);
   const [showBoard, setShowBoard] = useState(false);
+  const [companySubpage, setCompanySubpage] = useState(null);
   const [showIntro, setShowIntro] = useState(true);
   const screenRef = useRef(null);
   const stageRef = useRef(null);
@@ -819,6 +837,7 @@ export default function App() {
   function goToIntro() {
     setActiveFleet(null);
     setShowBoard(false);
+    setCompanySubpage(null);
     setActive(null);
     setShowIntro(true);
   }
@@ -826,6 +845,7 @@ export default function App() {
   function openHome() {
     setActiveFleet(null);
     setShowBoard(false);
+    setCompanySubpage(null);
     setActive(null);
     setShowIntro(false);
   }
@@ -870,6 +890,12 @@ export default function App() {
             <div className="scene-content" ref={screenRef}>
               {showBoard ? (
                 <BoardScreen onReturn={closeBoard} onHome={goToIntro} />
+              ) : companySubpage ? (
+                <CompanySubpageScreen
+                  title={companySubpage === 'management' ? 'MANAGEMENT TEAM' : 'VESSELS'}
+                  onReturn={() => setCompanySubpage(null)}
+                  onHome={goToIntro}
+                />
               ) : activeFleet ? (
                 <FleetDetailScreen fleetItem={activeFleet} onReturn={closeFleet} onHome={goToIntro} />
               ) : active?.id === 'services' ? (
@@ -879,7 +905,11 @@ export default function App() {
               ) : active?.id === 'facilities' ? (
                 <FacilitiesScreen onSelectDetail={openFleet} />
               ) : active?.id === 'company' ? (
-                <CompanyScreen onOpenBoard={openBoard} />
+                <CompanyScreen
+                  onOpenBoard={openBoard}
+                  onOpenManagement={() => setCompanySubpage('management')}
+                  onOpenVessels={() => setCompanySubpage('vessels')}
+                />
               ) : active ? (
                 <DetailScreen section={active} />
               ) : (

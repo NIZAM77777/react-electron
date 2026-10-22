@@ -1571,3 +1571,11 @@ html, body, #root {
   fill: rgba(16, 145, 255, 0.45);
   filter: drop-shadow(0 8px 10px rgba(0, 40, 90, 0.4));
 }
+
+
+/* Center the final Board of Directors card when there is an odd number of members. */
+.board-member:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: 50%;
+}

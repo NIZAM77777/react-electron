@@ -126,9 +126,10 @@ const facilityPoints = {
     'EXPERT TEAM FOR FLEET & THIRD-PARTY VESSELS',
   ],
   'marine-jetty': [
-    '110-METRE MARINE JETTY',
-    'RO-RO & LO-LO LOADING & OFFLOADING',
-    'SAFE, EFFICIENT VESSEL ACCESS',
+    '180 M QUAY WALL',
+    'DEDICATED RO-RO FACILITY',
+    'DEDICATED SLIPWAY',
+    'BERTHING FACILITIES AND STORAGE YARD',
   ],
   'workshop-maintenance': [
     'TECHNICAL, MAINTENANCE & REPAIR SUPPORT',
@@ -340,7 +341,7 @@ function FleetDetailScreen({ fleetItem, onReturn, onHome }) {
           <span>HOME</span>
         </button>
 
-        <h1 className="facility-photo-title">{fleetItem.label}</h1>
+        <h1 className="facility-photo-title">{fleetItem.detailTitle || fleetItem.label}</h1>
         <div className="facility-photo-points">
           {points.map((point) => (
             <div className="facility-photo-point" key={point}>
@@ -485,7 +486,7 @@ const facilities = [
   { label: 'HEAD OFFICE', img: 'head-office', w: 260, detailImage: './images/facility-details/head-office-new.jpeg' },
   { label: 'WAREHOUSE & STORAGE', img: 'warehouse-storage', w: 245, detailImage: './images/facility-details/warehouse-new.jpeg' },
   { label: 'SHIPYARD FACILITY', img: 'shipyard-facility', w: 262, detailImage: './images/facility-details/shipyard-new.jpeg' },
-  { label: 'MARINE JETTY', img: 'marine-jetty', w: 255, icon: './images/facilities/marine-jetty-v2.png', detailImage: './images/facility-details/marine-jetty-new.jpeg' },
+  { label: 'MARINE JETTY', detailTitle: 'JETTY FACILITY', img: 'marine-jetty', w: 255, icon: './images/facilities/marine-jetty-v2.png', detailImage: './images/facility-details/marine-jetty-new.jpeg' },
   { label: 'WORKSHOP & MAINTENANCE', img: 'workshop-maintenance', w: 140, icon: './images/facilities/workshop-maintenance-v2.png', detailImage: './images/facility-details/workshop-new.jpeg' },
   { label: 'TRAVELIFT FACILITY', img: 'travelift-facility', w: 200, detailImage: './images/facility-details/travelift-new.jpeg' },
 ];

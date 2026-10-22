@@ -790,12 +790,6 @@ function VesselsScreen({ onReturn, onHome }) {
           );
         })}
 
-        <div className="vessels-notes">
-          <strong>Notes:</strong>
-          {vesselNotes.map((n) => (
-            <p key={n}>{n}</p>
-          ))}
-        </div>
       </div>
     </div>
   );

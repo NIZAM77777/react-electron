@@ -546,9 +546,8 @@ function CompanyScreen({ onOpenBoard, onOpenManagement, onOpenVessels }) {
         </p>
       </div>
       <div className="company-stats">
-        {companyStats.map((s, index) => (
+        {companyStats.map((s) => (
           (() => {
-            const interactive = true;
             const onClick = s.img === 'directors' ? onOpenBoard : s.img === 'management' ? onOpenManagement : onOpenVessels;
 
             return <button
@@ -582,9 +581,79 @@ function CompanyScreen({ onOpenBoard, onOpenManagement, onOpenVessels }) {
   );
 }
 
-function CompanySubpageScreen({ title, onReturn, onHome }) {
+const managementMembers = [
+  {
+    name: 'VENU KRISHNA PILLAI',
+    position: 'General Manager',
+    image: './images/company/management/venu-cutout.png',
+  },
+  {
+    name: 'CAPT. FIRAS AL SAID',
+    position: 'Operations Manager',
+    image: './images/company/management/firas-cutout.png',
+  },
+  {
+    name: 'ABIN THOMAS',
+    position: 'Finance Manager',
+    image: './images/company/management/abin-cutout.png',
+  },
+  {
+    name: 'MOUSA KHALFAN FARAJ MOHAMED AL MEHAIRBI',
+    position: 'Manager, Bunkering & Boats Division',
+    image: './images/company/management/moosa-khalfan-cutout.png',
+  },
+  {
+    name: 'GHANEM KHALID FARAJ MOHAMED AL MEHAIRBI',
+    position: 'Procurement Manager',
+    image: './images/company/management/ghanem-cutout.png',
+  },
+  {
+    name: 'ANIL KUMAR',
+    position: 'Technical Manager',
+    image: './images/company/management/anil-cutout.png',
+  },
+  {
+    name: 'ANITA ANIL JOHN',
+    position: 'Commercial Head',
+    image: './images/company/management/anita-cutout.png',
+  },
+  {
+    name: 'BENNY PIUS GONSALVES',
+    position: 'DPA - CSO',
+    image: './images/company/management/benny-cutout.png',
+  },
+  {
+    name: 'RAKHESH MOHAN',
+    position: 'QHSE Manager',
+    image: './images/company/management/rakhesh-cutout.png',
+  },
+  {
+    name: 'FABIN KOSHY',
+    position: 'Marine HR Manager',
+    image: './images/company/management/fabin-cutout.png',
+  },
+  {
+    name: 'MOHAMMED AHMED MOHAMMED AL-SAEEDI',
+    position: 'PRO Manager',
+    image: './images/company/management/mohammed-ahmed-cutout.png',
+  },
+  {
+    name: 'MANZOOR PARAYIL VALAPPIL',
+    position: 'Transport & Facilities Head',
+    image: './images/company/management/manzoor-cutout.png',
+  },
+  {
+    name: 'SHASHIKIRAN YA',
+    position: 'HR Specialist',
+    image: './images/company/management/whatsapp-cutout.png',
+  },
+];
+
+function ManagementScreen({ onReturn, onHome }) {
+  const [generalManager, ...team] = managementMembers;
+
   return (
-    <div className="board-screen company-subpage-screen">
+    <div className="board-screen management-screen">
       <button className="fleet-detail-nav fleet-detail-nav-back" onClick={onReturn} aria-label="Return">
         <ChevronLeft size={26} strokeWidth={1.5} />
         <span>RETURN</span>
@@ -593,7 +662,43 @@ function CompanySubpageScreen({ title, onReturn, onHome }) {
         <Home size={26} strokeWidth={1.5} />
         <span>HOME</span>
       </button>
-      <h1 className="board-title">{title}</h1>
+
+      <h1 className="board-title">MANAGEMENT TEAM</h1>
+
+      <div className="management-content">
+        <article className="management-lead">
+          <div className="management-lead-photo-wrap">
+            <img
+              className="management-lead-photo"
+              src={generalManager.image}
+              alt={generalManager.name}
+              draggable="false"
+            />
+          </div>
+          <div className="management-lead-copy">
+            <span className="management-eyebrow">EXECUTIVE LEADERSHIP</span>
+            <strong>{generalManager.name}</strong>
+            <span>{generalManager.position}</span>
+          </div>
+        </article>
+
+        <div className="management-grid">
+          {team.map((member) => (
+            <article className="management-member" key={member.image}>
+              <div className="management-photo-wrap">
+                <img
+                  className="management-photo"
+                  src={member.image}
+                  alt={member.name}
+                  draggable="false"
+                />
+              </div>
+              <strong>{member.name}</strong>
+              <span>{member.position}</span>
+            </article>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
@@ -737,13 +842,6 @@ const vesselRows = [
   ["114", "\"L M S - 56\"", "", "10 PAX", "Passenger / Service Boat", "2025", "23.3", "135", "135", "-", "Liwa Marine Services PJSC"],
   ["115", "\"LMS ONE\"", "", "10 PAX", "Passenger / Service Boat", "2025", "23.3", "135", "135", "-", "Liwa Marine Services PJSC"],
   ["116", "\"MOULHIMAH\"", "", "280 PAX", "Passenger Ferry", "2025", "42.39", "468", "153", "TBA", "Liwa Marine Services PJSC"],
-];
-
-const vesselNotes = [
-  '1. After proposing the firm business, rates, terms and conditons will be negotiated and business is always concluded based on the respective industry approved and or adopted Charter Parties',
-  '2. The Vessels Particulars are believed to be correct but without guarantee',
-  '3. Charter of each Vessel subject to availability',
-  '4. Liwa Marine Services (LMS), Abu Dhabi is an associate of Khalid Faraj Shipping (KFS) and all Vessels owned by LMS are Commercially and Technically managed by KFS',
 ];
 
 const vesselColumnClass = ['sl', 'name', 'opco', 'type', 'built', 'loa', 'grt', 'nrt', 'dwt', 'owner'];
@@ -1084,8 +1182,7 @@ export default function App() {
               ) : companySubpage === 'vessels' ? (
                 <VesselsScreen onReturn={() => setCompanySubpage(null)} onHome={goToIntro} />
               ) : companySubpage ? (
-                <CompanySubpageScreen
-                  title="MANAGEMENT TEAM"
+                <ManagementScreen
                   onReturn={() => setCompanySubpage(null)}
                   onHome={goToIntro}
                 />

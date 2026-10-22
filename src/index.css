@@ -908,6 +908,12 @@ html, body, #root {
   cursor: pointer;
 }
 
+/* Center the final facility item on the bottom row when there are five items. */
+.facility-item:last-child {
+  grid-column: 1 / -1;
+  justify-self: center;
+}
+
 /* icons sit on one baseline inside a fixed-height box */
 .facility-icon-box {
   display: flex;

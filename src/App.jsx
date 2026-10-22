@@ -533,9 +533,8 @@ function FacilitiesScreen({ onSelectDetail }) {
 }
 
 const companyStats = [
-  { lines: ['116 +', 'VESSELS'], img: 'vessels', w: 100 },
-  { lines: ['ABU DHABI', 'HEADQUARTERS'], img: 'headquarters', w: 140 },
   { lines: ['BOARD OF DIRECTORS'], img: 'directors', w: 125 },
+  { lines: ['116 +', 'VESSELS'], img: 'vessels', w: 100 },
 ];
 
 function CompanyScreen({ onOpenBoard }) {
@@ -564,7 +563,7 @@ function CompanyScreen({ onOpenBoard }) {
           >
             <span className="company-icon-box">
               <span
-                className={`company-icon-sprite company-icon-sprite-${index}`}
+                className={`company-icon-sprite company-icon-sprite-${s.img === 'vessels' ? 0 : s.img === 'headquarters' ? 1 : 2}`}
                 aria-hidden="true"
                 style={{ backgroundImage: "url('./images/company/company-icon-sprite.png')" }}
               />

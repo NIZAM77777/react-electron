@@ -604,6 +604,209 @@ function CompanySubpageScreen({ title, onReturn, onHome }) {
   );
 }
 
+// VESSELS PAGE: fleet list text taken from vessels.xls (Fleet List 2025).
+const vesselsHeader = [
+  '',
+  '',
+  '',
+  'FLEET LIST - OWNED AND UNDER MANAGEMENT',
+];
+
+const vesselColumns = [
+  'Sl. No.',
+  'Name of the Vessel',
+  'OPCO / SPC / PPE Status',
+  'Type of the Vessel',
+  'Month and Year Built',
+  'LOA (meters)',
+  'GRT',
+  'NRT',
+  'DWCC / DWT',
+  'Owners',
+];
+
+// [sl, name, note, opco, type, built, loa, grt, nrt, dwt, owner]
+const vesselRows = [
+  ["1", "\"RAWDAH - 1\"", "", "ASMV / ADNOC SPC / FEP / CEP", "Landing Craft [ LCT ]", "December, 2006", "40", "250", "70", "250", "Liwa Marine Services PJSC"],
+  ["2", "\"KENOOZ\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "October, 2016", "46", "499", "144", "500", "Liwa Marine Services PJSC"],
+  ["3", "\"MARIYAM-1\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "2023", "46.2", "496", "142", "462.173", "Liwa Marine Services PJSC"],
+  ["4", "\"TOYOOF\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "November, 2017", "46.2", "497", "150", "462", "Khalid Faraj Shipping LLC-SPC"],
+  ["5", "\"ZEHOOR\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "2022", "46.2", "496", "149", "442.9", "Liwa Marine Services PJSC"],
+  ["6", "\"AZAH\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "September, 2004", "47", "456", "137", "500", "Liwa Marine Services PJSC"],
+  ["7", "\"MEZZON-1\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "January, 2016", "47", "461", "144", "500", "Liwa Marine Services PJSC"],
+  ["8", "\"NORAH-1\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "2022", "47", "499", "148", "458.8", "Liwa Marine Services PJSC"],
+  ["9", "\"SALMA\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "April, 2006", "47", "481", "144", "500", "Liwa Marine Services PJSC"],
+  ["10", "\"SAMHA\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "September, 2004", "47", "456", "137", "500", "Liwa Marine Services PJSC"],
+  ["11", "\"SULTAN II\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "December, 2007", "49.13", "453", "302", "500", "Liwa Marine Services PJSC"],
+  ["12", "\"REEM MAY\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "March, 2001", "49.5", "691", "208", "600", "Liwa Marine Services PJSC"],
+  ["13", "\"BA'AYA - 1\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "May, 1989", "50", "499", "264", "630", "Khalid Faraj Shipping LLC-SPC"],
+  ["14", "\"ABEER\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "2018", "63.25", "499", "148", "360", "Liwa Ship Building"],
+  ["15", "\"RAHAF\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "2018", "63.25", "499", "148", "360", "Liwa Ship Building"],
+  ["16", "\"ASYEH\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "June, 2012", "64", "869", "320", "1100", "Liwa Marine Services PJSC"],
+  ["17", "\"BUSHRA\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "December, 2018", "64", "929", "278", "1100", "Liwa Marine Services PJSC"],
+  ["18", "\"DAYYINAH STAR 1\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "April, 2006", "64", "679", "203", "900", "Khalid Faraj Shipping LLC-SPC"],
+  ["19", "\"JARYEH\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "April, 2014", "64", "869", "320", "1100", "Liwa Marine Services PJSC"],
+  ["20", "\"KAWAKEB\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "2025", "64", "972", "291", "1233", "Liwa Marine Services PJSC"],
+  ["21", "\"KHAWLAH-1\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "December, 2006", "64", "869", "320", "1100", "Liwa Marine Services PJSC"],
+  ["22", "\"KHWATER\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "February, 2019", "64", "929", "278", "1100", "Liwa Marine Services PJSC"],
+  ["23", "\"MARWAH 1\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "July, 2016", "64", "869", "320", "1100", "Liwa Marine Services PJSC"],
+  ["24", "\"NAAYEM\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "April, 2014", "64", "929", "278", "1100", "Khalid Faraj Shipping LLC-SPC"],
+  ["25", "\"NAGWA 1\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "January, 2019", "64", "929", "278", "1100", "Liwa Marine Services PJSC"],
+  ["26", "\"NATHRAH\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "March, 2016", "64", "869", "320", "1100", "Liwa Marine Services PJSC"],
+  ["27", "\"SANABEL\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "2025", "64", "972", "291", "1233", "Liwa Marine Services PJSC"],
+  ["28", "\"SWAYDA\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "April, 2015", "64", "869", "320", "1100", "Liwa Marine Services PJSC"],
+  ["29", "\"SHEWELEH\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "March, 2016", "64", "869", "320", "1100", "Liwa Marine Services PJSC"],
+  ["30", "\"TAIBAH-1\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "December, 2006", "64", "869", "320", "1100", "Liwa Marine Services PJSC"],
+  ["31", "\"TARFFAH-1\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "July, 2016", "64", "869", "320", "1100", "Liwa Marine Services PJSC"],
+  ["32", "\"THURAYA-1\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "April, 2015", "64", "869", "320", "1100", "Liwa Marine Services PJSC"],
+  ["33", "\"RAZAN 1\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "April, 2014", "64", "869", "320", "1100", "Liwa Marine Services PJSC"],
+  ["34", "\"WASAYF\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "January, 2020", "64", "929", "278", "1100", "Liwa Marine Services PJSC"],
+  ["35", "\"TAMARA 1\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "January, 2019", "65.48", "1070", "325", "1462", "Liwa Marine Services PJSC"],
+  ["36", "\"HAWAYA\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "February, 2010", "65.6", "869", "320", "1400", "Liwa Marine Services PJSC"],
+  ["37", "\"WARAYA\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "February, 2010", "65.6", "869", "320", "1400", "Liwa Marine Services PJSC"],
+  ["38", "\"HOREYEH\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "March, 2017", "68", "1260", "378", "1800", "Liwa Marine Services PJSC"],
+  ["39", "\"JURRY\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "2025", "68", "1595", "478", "2046", "Liwa Marine Services PJSC"],
+  ["40", "\"KAWTHAR 1\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "2025", "68", "1537", "461", "2046", "Liwa Marine Services PJSC"],
+  ["41", "\"KHAYRAT\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "2025", "68", "1537", "461", "2046", "Liwa Marine Services PJSC"],
+  ["42", "\"RWABEE\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "2021", "68", "1304", "391", "1837", "Liwa Marine Services PJSC"],
+  ["43", "\"SAJAYA\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "2025", "68", "1595", "478", "2046", "Liwa Marine Services PJSC"],
+  ["44", "\"WARDEH 1\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "February, 2010", "68", "1418", "426", "1856", "Khalid Faraj Shipping LLC-SPC"],
+  ["45", "\"YEAM 1\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "March, 2017", "68", "1260", "378", "1800", "Liwa Marine Services PJSC"],
+  ["46", "\"SAHAYEB\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "2025", "68", "1438", "431", "1935", "Liwa Marine Services PJSC"],
+  ["47", "\"RAWASEE\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "2025", "68", "1600", "480", "2275", "Liwa Marine Services PJSC"],
+  ["48", "\"AYEH\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "2025", "68", "1595", "478", "2046", "Liwa Marine Services PJSC"],
+  ["49", "\"ESHRAQ\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "2025", "68", "1595", "478", "2046", "Liwa Marine Services PJSC"],
+  ["50", "\"ANHAR\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "2025", "68", "1595", "478", "2046", "Liwa Marine Services PJSC"],
+  ["51", "\"ASMA-1\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "2025", "68", "1595", "478", "2046", "Liwa Marine Services PJSC"],
+  ["52", "\"ASSILAH\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "2025", "69", "1396", "523", "1733", "Liwa Marine Services PJSC"],
+  ["53", "\"TAKREEM\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "January, 2019", "78", "2330", "699", "3925", "Liwa Marine Services PJSC"],
+  ["54", "\"HETOON\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "2025", "78", "1929", "579", "2789", "Liwa Marine Services PJSC"],
+  ["55", "\"NADA\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "2025", "78", "1929", "579", "2789", "Liwa Marine Services PJSC"],
+  ["56", "\"NOUF\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "2025", "78", "1929", "579", "2789", "Liwa Marine Services PJSC"],
+  ["57", "\"JEDAYEL\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "2022", "78.4", "1832", "549", "2362", "Liwa Marine Services PJSC"],
+  ["58", "\"JEWAHER 1\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "January, 2020", "78.4", "1832", "549", "2377", "Liwa Marine Services PJSC"],
+  ["59", "\"NASAYEM 1\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "2021", "79.8", "2430", "729", "4000", "Liwa Marine Services PJSC"],
+  ["60", "\"JAMELAH - 1\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "2022", "80.5", "1819", "545", "2319", "Liwa Marine Services PJSC"],
+  ["61", "\"GADEER\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Landing Craft [ LCT ]", "2023", "99.9", "4593", "1362", "6793", "Liwa Marine Services PJSC"],
+  ["62", "\"BARAG 1\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Offshore Crew Boat", "April, 2014", "33.5", "175", "53", "60 Personnel", "Liwa Marine Services PJSC"],
+  ["63", "\"SILS-1\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Offshore Crew Boat", "2021", "42", "251", "75", "80 Personnel", "Liwa Marine Services PJSC"],
+  ["64", "\"HAQUL 1\"", "", "ASMV/ADNOC SPC/FEP/CEP", "Offshore Crew Boat", "2021", "42", "251", "75", "80 Personnel", "Liwa Marine Services PJSC"],
+  ["65", "\"DEBRAN 1\"", "Bollard Pull: 55 T / BHP: 4,400", "ASMV/ADNOC SPC/FEP/CEP", "Anchor Handling / Towing Tug", "2012", "37", "482", "145", "Bow Thruster fitted", "Liwa Marine Services PJSC"],
+  ["66", "\"KESSAB 1\"", "Bollard Pull: 55 T / BHP: 4,400", "ASMV/ADNOC SPC/FEP/CEP", "Anchor Handling / Towing Tug", "2011", "37", "482", "145", "Bow Thruster fitted", "Liwa Marine Services PJSC"],
+  ["67", "\"MARBAN\"", "Bollard Pull: 15 T / BHP: 1,200", "ASMV/ADNOC SPC/FEP/CEP", "Tug Boat with Towing Hook", "2008", "23.5", "170", "50", "Not Applicable", "Liwa Marine Services PJSC"],
+  ["68", "\"RAMASI\"", "Bollard Pull: 27 T / BHP: 2060", "ASMV/ADNOC SPC/FEP/CEP", "Tug Boat with Towing Winch", "2008", "30", "256", "77", "Not Applicable", "Liwa Marine Services PJSC"],
+  ["69", "\"SAEED\"", "Bollard Pull : 27 T / BHP 2,060", "ASMV/ADNOC SPC/FEP/CEP", "Tug Boat with Towing Winch", "October, 2005", "31", "297", "89", "Not Applicable", "Liwa Marine Services PJSC"],
+  ["70", "\"SARWAN\"", "Bollard Pull: 27 T / BHP: 2,060", "ASMV/ADNOC SPC/FEP/CEP", "Tug Boat with Towing Hook", "2008", "30", "256", "77", "Not Applicable", "Liwa Marine Services PJSC"],
+  ["71", "\"LATEER\"", "Bollard Pull: 18 T / BHP: 1,300", "ASMV/ADNOC SPC/FEP/CEP", "Tug Boat with Towing Hook", "2008", "24", "190", "56", "Not Applicable", "Liwa Marine Services PJSC"],
+  ["72", "\"SWYHAN 1\"", "Bollard Pull: 18 T / BHP: 1,440", "ASMV/ADNOC SPC/FEP/CEP", "AHT Fitted with \"A\" Frame", "2008", "26", "202", "60", "Not Applicable", "Liwa Marine Services PJSC"],
+  ["73", "\"TRAYCE\"", "Bollard Pull: 27/ BHP: 2,060", "ASMV/ADNOC SPC/FEP/CEP", "Tug Boat with Towing Winch", "2011", "28.66", "297", "89", "Not Applicable", "Liwa Marine Services PJSC"],
+  ["74", "\"REDOOM\"", "Bollard Pull: 35 T / BHP: 2,800", "ASMV/ADNOC SPC/FEP/CEP", "Tug Boat with Towing Winch", "2008", "31", "320", "90", "Not Applicable", "Liwa Marine Services PJSC"],
+  ["75", "\"ARADEH\"", "[ 180' x 56' x 12' ]", "ASMV/ADNOC SPC/FEP/CEP", "Flat Top Cargo Barge", "2008", "52.7", "1100", "300", "2000", "Liwa Marine Services PJSC"],
+  ["76", "\"SOHAILEH\"", "[ 180' x 56' x 12' ]", "ASMV/ADNOC SPC/FEP/CEP", "Flat Top Cargo Barge", "2008", "52.7", "1100", "300", "2000", "Liwa Marine Services PJSC"],
+  ["77", "\"MOGAIRA 1\"", "[ 180' X 56' X 12' ]", "ASMV/ADNOC SPC/FEP/CEP", "Flat Top Cargo Barge", "2010", "54.86", "1100", "300", "2000", "Liwa Marine Services PJSC"],
+  ["78", "\"HARMYAH\"", "[ 250' x 70' x 16' ]", "ASMV/ADNOC SPC/FEP/CEP", "Dumb / Flat Top Barge", "2005", "76.2", "1957", "500", "4600", "Liwa Marine Services PJSC"],
+  ["79", "\"L M S - 02\"", "", "10 PAX", "Passenger / Service Boat", "2008", "13.1", "15", "15", "-", "Liwa Marine Services PJSC"],
+  ["80", "\"L M S - 03\"", "", "10 PAX", "Passenger / Service Boat", "2025", "13.1", "15", "15", "-", "Liwa Marine Services PJSC"],
+  ["81", "\"L M S - 06\"", "", "10 PAX", "Passenger / Service Boat", "2025", "13.1", "15", "15", "-", "Liwa Marine Services PJSC"],
+  ["82", "\"L M S - 07\"", "", "10 PAX", "Passenger / Service Boat", "2025", "13.1", "15", "15", "-", "Liwa Marine Services PJSC"],
+  ["83", "\"L M S - 11\"", "", "10 PAX", "Passenger / Service Boat", "2025", "13.1", "15", "15", "-", "Liwa Marine Services PJSC"],
+  ["84", "\"L M S - 12\"", "", "10 PAX", "Passenger / Service Boat", "2025", "13.1", "15", "15", "-", "Liwa Marine Services PJSC"],
+  ["85", "\"L M S - 16\"", "", "10 PAX", "Passenger / Service Boat", "2008", "10.9", "5", "5", "-", "Liwa Marine Services PJSC"],
+  ["86", "\"L M S - 18\"", "", "30 PAX", "Passenger / Service Boat", "2017", "13.1", "15", "15", "-", "Liwa Marine Services PJSC"],
+  ["87", "\"L M S - 21\"", "", "30 PAX", "Passenger / Service Boat", "2017", "13.1", "10", "10", "-", "Liwa Marine Services PJSC"],
+  ["88", "\"L M S - 23\"", "", "30 PAX", "Passenger / Service Boat", "2017", "13.11", "15", "15", "-", "Liwa Marine Services PJSC"],
+  ["89", "\"L M S - 24\"", "", "30 PAX", "Passenger / Service Boat", "2017", "13.11", "15", "15", "-", "Liwa Marine Services PJSC"],
+  ["90", "\"L M S - 25\"", "", "30 PAX", "Passenger / Service Boat", "2018", "13.11", "15", "15", "-", "Liwa Marine Services PJSC"],
+  ["91", "\"L M S - 26\"", "", "30 PAX", "Passenger / Service Boat", "2018", "13.11", "15", "15", "-", "Liwa Marine Services PJSC"],
+  ["92", "\"L M S - 27\"", "", "22 PAX", "Passenger / Service Boat", "2018", "13.46", "15", "15", "-", "Liwa Marine Services PJSC"],
+  ["93", "\"L M S - 28\"", "", "20 PAX", "Passenger / Service Boat", "2018", "11.82", "15", "15", "-", "Liwa Marine Services PJSC"],
+  ["94", "\"L M S - 29\"", "", "20 PAX", "Passenger / Service Boat", "2019", "13", "15", "15", "-", "Liwa Marine Services PJSC"],
+  ["95", "\"L M S - 30\"", "", "20 PAX", "Passenger / Service Boat", "2019", "13.3", "15", "15", "-", "Liwa Marine Services PJSC"],
+  ["96", "\"L M S - 31\"", "", "30 PAX", "Passenger / Service Boat", "2025", "13.78", "15", "15", "-", "Liwa Marine Services PJSC"],
+  ["97", "\"L M S - 32\"", "", "30 PAX", "Passenger / Service Boat", "2022", "13.78", "15", "15", "-", "Liwa Marine Services PJSC"],
+  ["98", "\"L M S - 33\"", "", "30 PAX", "Passenger / Service Boat", "2022", "13.71", "15", "15", "-", "Liwa Marine Services PJSC"],
+  ["99", "\"L M S - 34\"", "", "30 PAX", "Passenger / Service Boat", "2022", "13.71", "15", "15", "-", "Liwa Marine Services PJSC"],
+  ["100", "\"L M S - 35\"", "", "31 PAX", "Passenger / Service Boat", "2022", "13.71", "15", "15", "-", "Liwa Marine Services PJSC"],
+  ["101", "\"L M S - 36\"", "", "29 PAX", "Passenger / Service Boat", "2022", "13.71", "15", "15", "-", "Liwa Marine Services PJSC"],
+  ["102", "\"L M S - 37\"", "", "30 PAX", "Passenger / Service Boat", "2022", "13.78", "15", "15", "-", "Liwa Marine Services PJSC"],
+  ["103", "\"L M S - 38\"", "", "20 PAX", "Passenger / Service Boat", "2019", "11.86", "10", "10", "-", "Liwa Marine Services PJSC"],
+  ["104", "\"L M S - 39\"", "", "20 PAX", "Passenger / Service Boat", "2022", "12.1", "5", "5", "-", "Liwa Marine Services PJSC"],
+  ["105", "\"L M S - 40\"", "", "20 PAX", "Passenger / Service Boat", "2014", "12.19", "5", "5", "-", "Liwa Marine Services PJSC"],
+  ["106", "\"L M S - 42\"", "", "24 PAX", "Passenger / Service Boat", "2023", "16.6", "16", "8", "-", "Liwa Marine Services PJSC"],
+  ["107", "\"L M S - 43\"", "", "10 PAX", "Passenger / Service Boat", "2023", "10.25", "14", "8", "-", "Liwa Marine Services PJSC"],
+  ["108", "\"L M S - 46\"", "", "10 PAX", "Passenger / Service Boat", "2024", "11.9", "10", "10", "-", "Liwa Marine Services PJSC"],
+  ["109", "\"L M S - 49\"", "", "10 PAX", "Passenger / Service Boat", "2023", "11.5", "10", "10", "-", "Liwa Marine Services PJSC"],
+  ["110", "\"L M S - 50\"", "", "10 PAX", "Passenger / Service Boat", "2023", "11.5", "10", "10", "-", "Liwa Marine Services PJSC"],
+  ["111", "\"L M S - 51\"", "", "10 PAX", "Passenger / Service Boat", "2024", "11.5", "10", "10", "-", "Liwa Marine Services PJSC"],
+  ["112", "\"L M S - 52\"", "", "10 PAX", "Passenger / Service Boat", "2024", "11.5", "10", "10", "-", "Liwa Marine Services PJSC"],
+  ["113", "\"L M S - 55\"", "", "119 PAX", "Passenger / Service Boat", "2025", "23.3", "135", "135", "-", "Liwa Marine Services PJSC"],
+  ["114", "\"L M S - 56\"", "", "10 PAX", "Passenger / Service Boat", "2025", "23.3", "135", "135", "-", "Liwa Marine Services PJSC"],
+  ["115", "\"LMS ONE\"", "", "10 PAX", "Passenger / Service Boat", "2025", "23.3", "135", "135", "-", "Liwa Marine Services PJSC"],
+  ["116", "\"MOULHIMAH\"", "", "280 PAX", "Passenger Ferry", "2025", "42.39", "468", "153", "TBA", "Liwa Marine Services PJSC"],
+];
+
+const vesselNotes = [
+  '1. After proposing the firm business, rates, terms and conditons will be negotiated and business is always concluded based on the respective industry approved and or adopted Charter Parties',
+  '2. The Vessels Particulars are believed to be correct but without guarantee',
+  '3. Charter of each Vessel subject to availability',
+  '4. Liwa Marine Services (LMS), Abu Dhabi is an associate of Khalid Faraj Shipping (KFS) and all Vessels owned by LMS are Commercially and Technically managed by KFS',
+];
+
+const vesselColumnClass = ['sl', 'name', 'opco', 'type', 'built', 'loa', 'grt', 'nrt', 'dwt', 'owner'];
+
+function VesselsScreen({ onReturn, onHome }) {
+  return (
+    <div className="board-screen vessels-screen">
+      <button className="fleet-detail-nav fleet-detail-nav-back" onClick={onReturn} aria-label="Return">
+        <ChevronLeft size={26} strokeWidth={1.5} />
+        <span>RETURN</span>
+      </button>
+      <button className="fleet-detail-nav fleet-detail-nav-home" onClick={onHome} aria-label="Home">
+        <Home size={26} strokeWidth={1.5} />
+        <span>HOME</span>
+      </button>
+
+      <h1 className="board-title">VESSELS</h1>
+
+      <div className="vessels-meta">
+        {vesselsHeader.map((line) => (
+          <span key={line}>{line}</span>
+        ))}
+      </div>
+
+      <div className="vessels-row vessels-head">
+        {vesselColumns.map((label, i) => (
+          <span key={label} className={`vc vc-${vesselColumnClass[i]}`}>{label}</span>
+        ))}
+      </div>
+
+      <div className="vessels-scroll">
+        {vesselRows.map((r) => {
+          const [sl, name, note, opco, type, built, loa, grt, nrt, dwt, owner] = r;
+          const cells = [sl, name, opco, type, built, loa, grt, nrt, dwt, owner];
+          return (
+            <div className="vessels-row" key={sl}>
+              {cells.map((value, i) => (
+                <span key={vesselColumnClass[i]} className={`vc vc-${vesselColumnClass[i]}`}>
+                  {value}
+                  {vesselColumnClass[i] === 'name' && note ? <small>{note}</small> : null}
+                </span>
+              ))}
+            </div>
+          );
+        })}
+
+        <div className="vessels-notes">
+          <strong>Notes:</strong>
+          {vesselNotes.map((n) => (
+            <p key={n}>{n}</p>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 const boardMembers = [
   { name: 'KHALFAN FARAJ AL MEHAIRBI', position: 'Chairman', image: './images/company/board/chairman-transparent.png' },
   { name: 'KHALID FARAJ AL MEHAIRBI', position: 'Founder Chairman', image: './images/company/board/founder-chairman-transparent.png' },
@@ -890,9 +1093,11 @@ export default function App() {
             <div className="scene-content" ref={screenRef}>
               {showBoard ? (
                 <BoardScreen onReturn={closeBoard} onHome={goToIntro} />
+              ) : companySubpage === 'vessels' ? (
+                <VesselsScreen onReturn={() => setCompanySubpage(null)} onHome={goToIntro} />
               ) : companySubpage ? (
                 <CompanySubpageScreen
-                  title={companySubpage === 'management' ? 'MANAGEMENT TEAM' : 'VESSELS'}
+                  title="MANAGEMENT TEAM"
                   onReturn={() => setCompanySubpage(null)}
                   onHome={goToIntro}
                 />

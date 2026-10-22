@@ -60,21 +60,17 @@ const servicePoints = {
     'We own and operate all our vessels.',
   ],
   'offshore-epc': [
-    'Most of our vessels work with oil majors.',
-    'We support EPC projects and contractors.',
-    'Our vessels provide offshore logistics and marine support.',
+    'MOST OF OUR VESSELS OPERATE WITH NATIONAL OIL MAJORS AND OFFSHORE EPC CONTRACTORS',
+    'OUR FLEET SUPPORTS OFFSHORE FIELD DEVELOPMENT, DRILLING, PRODUCTION, AND EPC OPERATIONS',
   ],
   'freight-forwarding': [
-    'We provide freight forwarding services for our clients.',
-    'We transport cargo worldwide.',
-    'We also provide customs clearance services.',
+    'GLOBAL FREIGHT FORWARDING SERVICES',
+    'COMPREHENSIVE CUSTOMS CLEARANCE AND CUSTOMS HOUSE AGENCY SERVICES',
   ],
   'project-cargo': [
-    'Transport of project and heavy cargo worldwide.',
-    'Experienced team and engineers.',
-    'Safe handling of heavy and oversized cargo.',
-    'Proper planning and coordination.',
-    'Reliable and efficient transportation.',
+    'OVERSIZED CARGO',
+    'SPECIALIZED IN PROJECT CARGO TRANSPORTATION AND HANDLING',
+    'EXPERTISE IN THE SAFE HANDLING AND TRANSPORTATION OF HEAVY-LIFT AND OVERSIZED CARGO',
   ],
   shipbuilding: [
     'Shipbuilding and vessel repair services.',

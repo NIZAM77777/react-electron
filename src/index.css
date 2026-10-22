@@ -1557,3 +1557,9 @@ html, body, #root {
   width: 24px;
   height: 24px;
 }
+
+
+/* Slightly raise the Head Office point without moving other facility content. */
+.facility-photo-points-head-office {
+  bottom: 70px;
+}

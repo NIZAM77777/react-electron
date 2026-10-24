@@ -815,6 +815,11 @@ html, body, #root {
   filter: brightness(0) invert(1) drop-shadow(0 5px 6px rgba(0, 20, 50, 0.25));
 }
 
+.fleet-detail-spec-icon svg {
+  width: 78px;
+  height: 78px;
+}
+
 .fleet-detail-spec-label {
   margin-top: 10px;
   font-size: 24px;

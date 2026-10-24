@@ -1,6 +1,7 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { Anchor, Box, ChevronLeft, Home, Settings, Users } from 'lucide-react';
+import ImageQualityFilters from './ImageQualityFilters';
 
 const sections = [
   {
@@ -150,6 +151,7 @@ function ServicesScreen({ onSelectDetail }) {
           <button key={s.img} className="service-item anim" onClick={() => onSelectDetail(s)}>
             <span className="service-icon">
               <img
+                className={['project-cargo', 'tug'].includes(s.img) ? undefined : 'service-icon-clarity'}
                 src={`./images/services/${s.img}.png`}
                 alt=""
                 draggable="false"
@@ -978,6 +980,7 @@ function Background() {
   return (
     <div className="ocean-scene" aria-hidden="true">
       <video ref={ref} className="ocean-video" autoPlay muted loop playsInline preload="auto">
+        <source src="./videos/ocean-enhanced-4k.mp4" type="video/mp4" />
         <source src="./videos/ocean.mp4" type="video/mp4" />
       </video>
       <div className="ocean-overlay" />
@@ -1001,6 +1004,7 @@ function IntroScreen({ onEnter }) {
       aria-label="Open home page"
     >
       <video className="intro-video" autoPlay muted loop playsInline preload="auto">
+        <source src="./videos/intro-enhanced-2160.mp4" type="video/mp4" />
         <source src="./videos/intro.mp4" type="video/mp4" />
       </video>
     </button>
@@ -1149,6 +1153,7 @@ export default function App() {
 
   return (
     <main className="website-shell">
+      <ImageQualityFilters />
       <Background />
 
       <div className="stage" ref={stageRef}>

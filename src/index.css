@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=Manrope:wght@300;400;500;700;800&display=swap');
+@import './fonts.css';
 
 :root {
   font-family: 'DM Sans', sans-serif;
@@ -474,6 +474,11 @@ html, body, #root {
 
 .service-item:hover .service-icon img { transform: translateY(-6px) scale(1.05); }
 
+/* Keep the existing icon shadow after the subtle, alpha-preserving sharpening. */
+.service-icon img.service-icon-clarity {
+  filter: url('#kfs-icon-clarity') drop-shadow(0 10px 12px rgba(0, 40, 90, 0.3));
+}
+
 .service-label {
   max-width: 450px;
   margin-top: 6px;
@@ -550,6 +555,7 @@ html, body, #root {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  filter: url('#kfs-photo-clarity');
 }
 
 .fleet-photo-screen .fleet-detail-nav {
@@ -707,6 +713,7 @@ html, body, #root {
   font-size: 29px;
   font-weight: 700;
   line-height: 1.2;
+  text-transform: uppercase;
   text-shadow: 0 2px 9px rgba(0, 35, 75, 0.55);
 }
 
@@ -1235,6 +1242,7 @@ html, body, #root {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  filter: url('#kfs-photo-clarity');
 }
 
 .facility-photo-shade {
@@ -1842,4 +1850,13 @@ html, body, #root {
   font-weight: 500;
   line-height: 1.14;
   text-shadow: 0 2px 8px rgba(0, 24, 56, 0.66);
+}
+
+/* Inline filter definitions do not occupy space or affect the stage layout. */
+.image-quality-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
 }

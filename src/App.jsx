@@ -319,7 +319,7 @@ function FleetDetailScreen({ fleetItem, onReturn, onHome }) {
     return (
       <div className="fleet-detail-screen facility-photo-screen">
         <div
-          className="facility-photo-art"
+          className={`facility-photo-art ${fleetItem.img === 'marine-jetty' ? 'facility-photo-art-jetty' : ''}`}
           style={{ backgroundImage: `url(${fleetItem.detailImage})` }}
           aria-hidden="true"
         />

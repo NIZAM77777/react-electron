@@ -1062,6 +1062,17 @@ export default function App() {
   const screenRef = useRef(null);
   const stageRef = useRef(null);
 
+  // Warm the Jetty detail image before the visitor opens it so the first
+  // navigation does not have to wait for the full-screen JPEG to decode.
+  useEffect(() => {
+    const image = new Image();
+    image.decoding = 'async';
+    image.src = './images/facility-details/marine-jetty-new.jpeg';
+    if (typeof image.decode === 'function') {
+      image.decode().catch(() => {});
+    }
+  }, []);
+
   // Fixed 1080x1080 (1:1) design canvas, scaled to fully fit a square LED wall.
   // Keeping all layout coordinates in this logical canvas makes the experience
   // behave consistently on a 3x3 wall and on smaller preview windows.

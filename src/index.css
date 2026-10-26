@@ -841,7 +841,22 @@ html, body, #root {
   white-space: nowrap;
 }
 
-/* All fleet specification labels and values use the shared base font sizes. */
+/* Use the same hierarchy in every fleet: large label, smaller value. */
+.fleet-photo-screen .fleet-detail-spec-label {
+  font-size: 24px;
+}
+
+.fleet-photo-screen .fleet-detail-spec-value {
+  font-size: 30px;
+}
+
+.fleet-photo-screen .fleet-detail-specs-3 .fleet-detail-spec-label {
+  font-size: 24px;
+}
+
+.fleet-photo-screen .fleet-detail-specs-3 .fleet-detail-spec-value {
+  font-size: 30px;
+}
 
 /* Fleet photo details should dissolve into the image rather than read as a card. */
 /* Center fleet specifications vertically within the compact lower panel. */

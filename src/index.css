@@ -1296,6 +1296,12 @@ html, body, #root {
   filter: url('#kfs-photo-clarity');
 }
 
+/* The Jetty photo is especially heavy; skip the costly SVG convolution filter
+   so its first frame appears immediately while keeping every other facility unchanged. */
+.facility-photo-art-jetty {
+  filter: none;
+}
+
 .facility-photo-shade {
   z-index: 1;
   pointer-events: none;

@@ -807,11 +807,7 @@ html, body, #root {
 }
 
 .fleet-detail-spec-icon {
-  display: grid;
-  width: 112px;
-  height: 100px;
-  place-items: center;
-  color: #fff;
+  display: none;
 }
 
 .fleet-detail-spec-icon img {
@@ -836,7 +832,7 @@ html, body, #root {
 }
 
 .fleet-detail-spec-value {
-  margin-top: 18px;
+  margin-top: 12px;
   color: #ffd16f;
   font-size: 36px;
   font-weight: 700;

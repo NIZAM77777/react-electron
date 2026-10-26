@@ -49,7 +49,7 @@ const services = [
   { label: 'PROJECT CARGO HANDLING AND SUPPORT', img: 'project-cargo', detailImage: './images/service-details/project-cargo.png' },
   { label: 'SHIPBUILDING AND REPAIRS', img: 'shipbuilding', detailImage: './images/service-details/shipbuilding.png' },
   { label: 'PORT AGENCY AND THIRD PARTY SHIP MANAGEMENT', img: 'port-agency', detailImage: './images/service-details/port-agency.png' },
-  { label: 'TUG AND TOWAGE SERVICES', img: 'tug', detailImage: './images/service-details/tug.png' },
+  { label: 'TOWAGE SERVICES', img: 'tug', detailImage: './images/service-details/tug.png' },
   { label: 'ONSHORE AND OFFSHORE OIL & GAS FIELD SUPPORT', img: 'oil-gas', detailImage: './images/service-details/oil-gas.png' },
 ];
 

@@ -880,6 +880,26 @@ html, body, #root {
   align-self: center;
 }
 
+/* Give three-column fleet specs equal space so long values stay centered. */
+.fleet-photo-screen .fleet-detail-specs-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  padding-right: 24px;
+  padding-left: 24px;
+}
+
+.fleet-photo-screen .fleet-detail-specs-3 .fleet-detail-spec {
+  padding: 0 12px;
+}
+
+.fleet-photo-screen .fleet-detail-specs-3 .fleet-detail-spec-value {
+  max-width: 100%;
+  font-size: 25px;
+  letter-spacing: 0;
+  white-space: normal;
+  text-wrap: balance;
+}
+
 .fleet-photo-screen .fleet-detail-spec-panel {
   background: linear-gradient(
     180deg,

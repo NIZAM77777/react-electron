@@ -55,9 +55,9 @@ const services = [
 
 const servicePoints = {
   'fleet-ownership': [
-    'One of the largest vessel owners in the UAE.',
-    'Current fleet of 116 vessels.',
-    'Fleet includes Landing Crafts, Tug Boats, Crew Boats, Cargo Barges, Passenger Boats and High Speed Passenger Ferry (HSC).',
+    'ONE OF THE LARGEST VESSEL OWNERS IN THE MIDDLE EAST AND AFRICAN REGIONS, WITH A FLEET OF 116 VESSELS.',
+    'ONE OF THE LARGEST VESSEL OWNERS IN THE MIDDLE EAST AND AFRICAN REGIONS, WITH A FLEET OF 116 VESSELS.',
+    'FLEET INCLUDES LANDING CRAFTS, TUG BOATS, CREW BOATS, CARGO BARGES, PASSENGER BOATS AND HIGH SPEED PASSENGER FERRY (HSC).',
   ],
   'offshore-epc': [
     'MOST OF OUR VESSELS OPERATE WITH NATIONAL OIL MAJORS AND OFFSHORE EPC CONTRACTORS',

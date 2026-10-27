@@ -2108,3 +2108,14 @@ html, body, #root {
 .service-detail-points {
   top: 186px;
 }
+
+
+/* All eight service detail pages: use a clean, consistent 10px gap between points. */
+.service-detail-points {
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.service-detail-point {
+  margin: 0;
+}

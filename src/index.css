@@ -1930,3 +1930,19 @@ html, body, #root {
   overflow: hidden;
   pointer-events: none;
 }
+
+
+/* GLOBAL PAGE HEADING ALIGNMENT
+   Keep RETURN/HOME navigation fixed; move page titles down consistently
+   across all main, fleet, facility, service, company, and people screens. */
+.services-page > h1,
+.services-page > .facilities-head,
+.facilities-head .facilities-title,
+.fleet-photo-title,
+.service-detail-title,
+.fleet-detail-title,
+.facility-photo-title,
+.board-title,
+.company-intro > h1 {
+  transform: translateY(20px);
+}

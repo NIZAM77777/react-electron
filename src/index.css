@@ -1216,6 +1216,7 @@ html, body, #root {
   justify-self: center;
   width: 100%;
   max-width: 420px;
+  margin-top: 20px;
 }
 
 .board-member {

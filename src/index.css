@@ -1995,3 +1995,51 @@ html, body, #root {
   top: 92px;
   text-align: center;
 }
+
+
+/* Facilities screen: keep the main title clear, with supporting lines below it. */
+.facilities-head {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.facilities-head > .facilities-sub,
+.facilities-head > .facilities-hint,
+.facilities-head > .facilities-title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0 12px;
+  text-align: center;
+  transform: none;
+}
+
+.facilities-head > .facilities-sub {
+  top: 92px;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.facilities-head > .facilities-hint {
+  top: 172px;
+  font-size: 10px;
+  line-height: 1.2;
+}
+
+.facilities-head > .facilities-title {
+  top: 190px;
+  font-size: 10px;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.facilities-head > .facilities-rule {
+  display: none;
+}

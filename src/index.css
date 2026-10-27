@@ -2135,6 +2135,5 @@ html, body, #root {
   display: block;
   margin-top: 18px;
   line-height: 1.25;
-  letter-spacing: -0.5px;
-  word-spacing: -1px;
+  letter-spacing: 0;
 }

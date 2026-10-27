@@ -1999,47 +1999,49 @@ html, body, #root {
 
 
 
-/* Facilities header order and hierarchy: title, facility size, then instruction. */
 .facilities-head {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  width: 100%;
   text-align: center;
 }
 
-.facilities-head .facilities-sub {
-  order: 1;
-  position: relative;
-  top: 92px;
+.facilities-head > .facilities-sub,
+.facilities-head > .facilities-hint,
+.facilities-head > .facilities-title {
+  position: absolute;
+  left: 0;
+  right: 0;
   width: 100%;
-  margin: 0 auto;
+  margin: 0;
+  padding: 0 12px;
   text-align: center;
+  transform: none;
+}
+
+.facilities-head > .facilities-sub {
+  top: 92px;
   font-size: 22px;
+  line-height: 1.2;
   font-weight: 800;
 }
 
-.facilities-head .facilities-rule {
-  order: 2;
-  margin-top: 104px;
-}
-
-.facilities-head .facilities-hint {
-  order: 3;
-  position: static;
-  width: 100%;
-  margin: 8px auto 0;
-  text-align: center;
+.facilities-head > .facilities-hint {
+  top: 122px;
   font-size: 16px;
+  line-height: 1.2;
 }
 
-.facilities-head .facilities-title {
-  order: 4;
-  position: relative;
-  top: 0;
-  width: 100%;
-  margin: 8px auto 0;
-  text-align: center;
+.facilities-head > .facilities-title {
+  top: 152px;
   font-size: 14px;
+  line-height: 1.2;
   font-weight: 600;
+}
+
+.facilities-head > .facilities-rule {
+  display: none;
 }

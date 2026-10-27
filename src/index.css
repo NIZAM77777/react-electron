@@ -2136,3 +2136,17 @@ html, body, #root {
   margin-top: -16px;
   line-height: 1.25;
 }
+
+
+/* Company Profile: normalize the visible artwork size for Board and Management icons. */
+.company-directors-image,
+.company-stat .company-icon-sprite-2 {
+  display: block;
+  width: 86px !important;
+  height: 86px !important;
+  max-width: 86px;
+  max-height: 86px;
+  object-fit: contain;
+  background-size: 258px 86px;
+  flex: 0 0 86px;
+}

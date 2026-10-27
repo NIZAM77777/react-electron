@@ -2101,3 +2101,10 @@ html, body, #root {
 .services-page:has(.services-grid) .services-grid {
   margin-top: 113px;
 }
+
+
+/* All service detail pages: begin the points list 30px below the heading.
+   The 186px canvas offset accounts for the kiosk's scaled display coordinates. */
+.service-detail-points {
+  top: 186px;
+}

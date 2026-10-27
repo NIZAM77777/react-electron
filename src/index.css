@@ -2133,6 +2133,6 @@ html, body, #root {
 
 .services-page:has(.fleet-item) .fleet-label {
   display: block;
-  margin-top: 18px;
+  margin-top: -8px;
   line-height: 1.25;
 }

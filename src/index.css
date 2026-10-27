@@ -1944,5 +1944,7 @@ html, body, #root {
 .facility-photo-title,
 .board-title,
 .company-intro > h1 {
-  transform: translateY(45px);
+  position: relative;
+  top: 34px;
+  transform: none;
 }

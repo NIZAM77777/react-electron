@@ -2095,31 +2095,3 @@ html, body, #root {
   margin-left: 0;
   transform: translateX(-50%);
 }
-
-
-/* Shared logo geometry: home and Company Profile use the exact same size and position. */
-.logo,
-.company-intro {
-  position: absolute;
-  top: 92px;
-  left: 0;
-  right: 0;
-  width: 100%;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  text-align: center;
-}
-
-.logo .logo-exact,
-.company-intro .company-intro-logo {
-  display: block;
-  width: min(82vw, 520px);
-  max-width: 520px;
-  height: auto;
-  margin: 0 auto;
-  object-fit: contain;
-  position: static;
-  transform: none;
-}

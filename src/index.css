@@ -710,7 +710,7 @@ html, body, #root {
   align-items: start;
   gap: 20px;
   color: #fff;
-  font-size: 29px;
+  font-size: 27px;
   font-weight: 700;
   line-height: 1.2;
   text-transform: uppercase;
@@ -727,7 +727,7 @@ html, body, #root {
 }
 
 .service-detail-points-6 .service-detail-point,
-.service-detail-points-7 .service-detail-point { font-size: 29px; }
+.service-detail-points-7 .service-detail-point { font-size: 27px; }
 
 .fleet-detail-nav {
   position: absolute;

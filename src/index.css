@@ -1943,5 +1943,5 @@ html, body, #root {
 .facility-photo-title,
 .board-title,
 .company-intro > h1 {
-  transform: translateY(10px);
+  transform: translateY(5px);
 }

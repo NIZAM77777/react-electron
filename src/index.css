@@ -2095,3 +2095,9 @@ html, body, #root {
   margin-left: 0;
   transform: translateX(-50%);
 }
+
+
+/* Services screen: move all eight service icons and labels downward uniformly. */
+.services-page:has(.services-grid) .services-grid {
+  margin-top: 78px;
+}

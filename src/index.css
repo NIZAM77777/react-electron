@@ -2057,3 +2057,17 @@ html, body, #root {
 .services-page .facilities-head > .facilities-rule {
   display: none;
 }
+
+
+/* Shift the entire Facilities heading group down to the same 92px page baseline. */
+.services-page .facilities-head > .facilities-title {
+  top: 92px;
+}
+
+.services-page .facilities-head > .facilities-sub {
+  top: 156px;
+}
+
+.services-page .facilities-head > .facilities-hint {
+  top: 190px;
+}

@@ -1941,22 +1941,41 @@ html, body, #root {
 
 
 /* GLOBAL PAGE HEADING ALIGNMENT
-   Match the heading-to-navigation gap shown in the LMS ICAD II BASE reference.
-   Keep RETURN and HOME in their original positions. */
+   Standard 92px heading position across the project; navigation remains unchanged. */
 .services-page > h1,
 .services-page > .services-sub,
 .facilities-head .facilities-title,
 .fleet-photo-title,
 .service-detail-title,
 .fleet-detail-title,
- .facility-photo-title,
+.facility-photo-title,
 .company-intro h1 {
   position: relative;
-  top: 34px;
+  top: 92px;
   transform: none;
 }
 
-/* Keep heading groups aligned together on every page. */
+/* Keep the subtitle gap consistent below its heading. */
 .services-page > .services-sub {
   margin-top: 16px;
+}
+
+/* Detail screens use absolute positioning, so set their title top directly. */
+.fleet-photo-title,
+.service-detail-title,
+.fleet-detail-title,
+.facility-photo-title {
+  top: 92px;
+}
+
+/* Board, management, and vessels headings share the same vertical coordinate. */
+.board-title {
+  top: 92px;
+}
+
+/* Introduction screen title sits at the same 92px coordinate. */
+.scene-content > h1,
+.intro-screen h1,
+.introduction-screen h1 {
+  top: 92px;
 }

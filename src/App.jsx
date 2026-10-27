@@ -558,8 +558,13 @@ function CompanyScreen({ onOpenBoard, onOpenManagement, onOpenVessels }) {
             onClick={onClick}
           >
             <span className="company-icon-box">
-              {s.img === 'management' ? (
-                <Users className="company-management-icon" size={94} strokeWidth={2.4} aria-hidden="true" />
+              {s.img === 'directors' ? (
+                <img
+                  className="company-directors-image"
+                  src="./images/company/board.png"
+                  alt=""
+                  draggable="false"
+                />
               ) : (
                 <span
                   className={`company-icon-sprite company-icon-sprite-${s.img === 'vessels' ? 0 : 2}`}

@@ -1184,9 +1184,9 @@ html, body, #root {
   z-index: 2;
 }
 
-.board-title {
+ .board-title {
   position: absolute;
-  top: 78px;
+  top: 112px;
   right: 40px;
   left: 40px;
   margin: 0;
@@ -1940,8 +1940,7 @@ html, body, #root {
 .fleet-photo-title,
 .service-detail-title,
 .fleet-detail-title,
-.facility-photo-title,
-.board-title,
+ .facility-photo-title,
 .company-intro h1 {
   position: relative;
   top: 34px;

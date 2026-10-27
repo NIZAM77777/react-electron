@@ -1933,8 +1933,8 @@ html, body, #root {
 
 
 /* GLOBAL PAGE HEADING ALIGNMENT
-   Apply one consistent downward offset to page headings only.
-   Navigation controls such as RETURN and HOME remain untouched. */
+   Keep page headings on a dedicated line below the RETURN/HOME navigation.
+   Navigation controls themselves remain untouched. */
 .services-page > h1,
 .facilities-head .facilities-title,
 .fleet-photo-title,
@@ -1943,5 +1943,5 @@ html, body, #root {
 .facility-photo-title,
 .board-title,
 .company-intro > h1 {
-  transform: translateY(5px);
+  transform: translateY(25px);
 }

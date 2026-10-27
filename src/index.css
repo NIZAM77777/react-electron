@@ -876,10 +876,21 @@ html, body, #root {
 }
 
 .fleet-photo-screen .fleet-detail-spec + .fleet-detail-spec {
-  border-left-width: 1px;
-  border-left-color: rgba(210, 235, 255, 0.28);
+  position: relative;
+  border-left: 0;
   height: 72%;
   align-self: center;
+}
+
+.fleet-photo-screen .fleet-detail-spec + .fleet-detail-spec::before {
+  content: '';
+  position: absolute;
+  top: 14%;
+  bottom: 14%;
+  left: 0;
+  width: 1px;
+  background: rgba(210, 235, 255, 0.28);
+  transform: translateY(-20px);
 }
 
 /* Give three-column fleet specs equal space so long values stay centered. */

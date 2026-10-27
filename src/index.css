@@ -1941,7 +1941,8 @@ html, body, #root {
 
 
 /* GLOBAL PAGE HEADING ALIGNMENT
-   Standard 92px heading position across the project; navigation remains unchanged. */
+   All page headings use a consistent 92px vertical reference and are centered
+   across the full available line. Navigation remains unchanged. */
 .services-page > h1,
 .services-page > .services-sub,
 .facilities-head .facilities-title,
@@ -1949,10 +1950,23 @@ html, body, #root {
 .service-detail-title,
 .fleet-detail-title,
 .facility-photo-title,
+.company-intro h1,
+.board-title,
+.scene-content > h1,
+.intro-screen h1,
+.introduction-screen h1 {
+  text-align: center;
+}
+
+/* Overview headings positioned within their existing layout. */
+.services-page > h1,
+.services-page > .services-sub,
+.facilities-head .facilities-title,
 .company-intro h1 {
   position: relative;
   top: 92px;
-  transform: none;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Keep the subtitle gap consistent below its heading. */
@@ -1960,22 +1974,24 @@ html, body, #root {
   margin-top: 16px;
 }
 
-/* Detail screens use absolute positioning, so set their title top directly. */
+/* Detail and board titles use absolute positioning; center across the full line. */
 .fleet-photo-title,
 .service-detail-title,
 .fleet-detail-title,
-.facility-photo-title {
-  top: 92px;
-}
-
-/* Board, management, and vessels headings share the same vertical coordinate. */
+.facility-photo-title,
 .board-title {
   top: 92px;
+  right: 0;
+  left: 0;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Introduction screen title sits at the same 92px coordinate. */
+/* Introduction heading centered on the full available line at 92px. */
 .scene-content > h1,
 .intro-screen h1,
 .introduction-screen h1 {
   top: 92px;
+  text-align: center;
 }

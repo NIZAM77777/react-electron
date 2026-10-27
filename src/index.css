@@ -2024,20 +2024,20 @@ html, body, #root {
 
 .facilities-head > .facilities-sub {
   top: 92px;
-  font-size: 16px;
+  font-size: 22px;
   line-height: 1.2;
   font-weight: 800;
 }
 
 .facilities-head > .facilities-hint {
-  top: 118px;
-  font-size: 10px;
+  top: 122px;
+  font-size: 16px;
   line-height: 1.2;
 }
 
 .facilities-head > .facilities-title {
-  top: 142px;
-  font-size: 10px;
+  top: 152px;
+  font-size: 14px;
   line-height: 1.2;
   font-weight: 600;
 }

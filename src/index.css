@@ -1936,6 +1936,7 @@ html, body, #root {
    Keep page headings on a dedicated line below the RETURN/HOME navigation.
    Navigation controls themselves remain untouched. */
 .services-page > h1,
+.services-page > .services-sub,
 .facilities-head .facilities-title,
 .fleet-photo-title,
 .service-detail-title,
@@ -1943,5 +1944,5 @@ html, body, #root {
 .facility-photo-title,
 .board-title,
 .company-intro > h1 {
-  transform: translateY(25px);
+  transform: translateY(45px);
 }

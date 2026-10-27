@@ -1933,10 +1933,9 @@ html, body, #root {
 
 
 /* GLOBAL PAGE HEADING ALIGNMENT
-   Keep RETURN/HOME navigation fixed; move page titles down consistently
-   across all main, fleet, facility, service, company, and people screens. */
+   Apply one consistent downward offset to page headings only.
+   Navigation controls such as RETURN and HOME remain untouched. */
 .services-page > h1,
-.services-page > .facilities-head,
 .facilities-head .facilities-title,
 .fleet-photo-title,
 .service-detail-title,
@@ -1944,5 +1943,5 @@ html, body, #root {
 .facility-photo-title,
 .board-title,
 .company-intro > h1 {
-  transform: translateY(20px);
+  transform: translateY(10px);
 }

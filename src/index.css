@@ -1995,3 +1995,37 @@ html, body, #root {
   top: 92px;
   text-align: center;
 }
+
+
+/* Facilities header order: main title first, supporting details beneath it. */
+.facilities-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.facilities-head .facilities-title {
+  order: 1;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.facilities-head .facilities-rule {
+  order: 2;
+}
+
+.facilities-head .facilities-sub {
+  order: 3;
+  width: 100%;
+  margin: 12px auto 0;
+  text-align: center;
+}
+
+.facilities-head .facilities-hint {
+  order: 4;
+  width: 100%;
+  margin: 8px auto 0;
+  text-align: center;
+}

@@ -844,12 +844,12 @@ html, body, #root {
 /* Use the same hierarchy in every fleet: large label, smaller value. */
 .fleet-photo-screen .fleet-detail-spec-label {
   font-size: 24px;
-  transform: translateY(-14px);
+  transform: translateY(-20px);
 }
 
 .fleet-photo-screen .fleet-detail-spec-value {
   font-size: 30px;
-  transform: translateY(-14px);
+  transform: translateY(-20px);
 }
 
 .fleet-photo-screen .fleet-detail-specs-3 .fleet-detail-spec-label {

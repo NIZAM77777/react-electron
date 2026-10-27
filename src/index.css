@@ -1710,7 +1710,7 @@ html, body, #root {
   grid-template-columns: 34px 150px 122px 138px 84px 50px 46px 46px 92px 1fr;
   column-gap: 8px;
   align-items: start;
-  padding: 5px 0;
+  padding: 7px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.28);
   color: #fff;
   font-size: 13px;

@@ -1998,7 +1998,8 @@ html, body, #root {
 
 
 
-/* Keep the facilities subtitle and supporting copy below the main title. */
+
+/* Facilities header order and hierarchy: title, facility size, then instruction. */
 .facilities-head {
   position: relative;
   display: flex;
@@ -2007,13 +2008,15 @@ html, body, #root {
   text-align: center;
 }
 
-.facilities-head .facilities-title {
+.facilities-head .facilities-sub {
   order: 1;
   position: relative;
   top: 92px;
-  margin: 0 auto;
   width: 100%;
+  margin: 0 auto;
   text-align: center;
+  font-size: 22px;
+  font-weight: 800;
 }
 
 .facilities-head .facilities-rule {
@@ -2021,18 +2024,22 @@ html, body, #root {
   margin-top: 104px;
 }
 
-.facilities-head .facilities-sub {
+.facilities-head .facilities-hint {
   order: 3;
   position: static;
   width: 100%;
   margin: 8px auto 0;
   text-align: center;
+  font-size: 16px;
 }
 
-.facilities-head .facilities-hint {
+.facilities-head .facilities-title {
   order: 4;
-  position: static;
+  position: relative;
+  top: 0;
   width: 100%;
-  margin: 6px auto 0;
+  margin: 8px auto 0;
   text-align: center;
+  font-size: 14px;
+  font-weight: 600;
 }

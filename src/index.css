@@ -564,7 +564,7 @@ html, body, #root {
 
 .fleet-photo-title {
   position: absolute;
-  top: 58px;
+  top: 78px;
   right: 40px;
   left: 40px;
   z-index: 2;
@@ -1356,7 +1356,7 @@ html, body, #root {
 
 .facility-photo-title {
   position: absolute;
-  top: 72px;
+  top: 78px;
   right: 40px;
   left: 40px;
   margin: 0;
@@ -1421,7 +1421,7 @@ html, body, #root {
 
 @media (max-width: 900px) {
   .facility-photo-title {
-    top: 58px;
+    top: 78px;
     font-size: 28px;
   }
 

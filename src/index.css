@@ -2110,12 +2110,19 @@ html, body, #root {
 }
 
 
-/* All eight service detail pages: use a clean, consistent 10px gap between points. */
+/* All eight service detail pages: 30px between points and 30px–80px below the title. */
 .service-detail-points {
+  top: 30px;
+  margin-top: 0;
   justify-content: flex-start;
-  gap: 10px;
+  gap: 30px;
 }
 
 .service-detail-point {
   margin: 0;
+}
+
+/* Keep the list 30px below the heading, while allowing a safe 80px offset if needed. */
+.service-detail-title + .service-detail-points {
+  top: calc(145px + 34px + 30px);
 }

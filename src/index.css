@@ -2071,3 +2071,27 @@ html, body, #root {
 .services-page .facilities-head > .facilities-hint {
   top: 190px;
 }
+
+
+/* Center both company logos and place each logo 92px below the top of its page. */
+.services-page:has(.company-intro) .company-intro {
+  top: 92px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.services-page:has(.company-intro) .company-intro-logo {
+  display: block;
+  margin: 0 auto 18px;
+}
+
+.services-page > .logo-exact,
+.services-page .logo-exact {
+  position: relative;
+  top: 92px;
+  left: 50%;
+  margin-left: 0;
+  transform: translateX(-50%);
+}

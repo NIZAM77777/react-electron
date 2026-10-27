@@ -1201,13 +1201,14 @@ html, body, #root {
 
 .board-grid {
   position: absolute;
-  top: 165px;
+  top: 185px;
   right: 95px;
-  bottom: 48px;
   left: 95px;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px 44px;
+  grid-auto-rows: max-content;
+  align-content: start;
+  gap: 0 44px;
 }
 
 .board-member {

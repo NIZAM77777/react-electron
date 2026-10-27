@@ -844,12 +844,12 @@ html, body, #root {
 /* Use the same hierarchy in every fleet: large label, smaller value. */
 .fleet-photo-screen .fleet-detail-spec-label {
   font-size: 24px;
-  transform: translateY(-20px);
+  transform: translateY(-26px);
 }
 
 .fleet-photo-screen .fleet-detail-spec-value {
   font-size: 30px;
-  transform: translateY(-20px);
+  transform: translateY(-26px);
 }
 
 .fleet-photo-screen .fleet-detail-specs-3 .fleet-detail-spec-label {
@@ -890,7 +890,7 @@ html, body, #root {
   left: 0;
   width: 1px;
   background: rgba(210, 235, 255, 0.28);
-  transform: translateY(-20px);
+  transform: translateY(-26px);
 }
 
 /* Give three-column fleet specs equal space so long values stay centered. */

@@ -1736,7 +1736,7 @@ html, body, #root {
   position: absolute;
   top: 292px;
   right: 28px;
-  bottom: 24px;
+  bottom: 10px;
   left: 28px;
   overflow-y: auto;
   overflow-x: hidden;

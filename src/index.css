@@ -2125,10 +2125,10 @@ html, body, #root {
 
 /* Fleet category page only: keep vessel artwork visually separated and uncluttered. */
 .services-page:has(.fleet-item) .fleet-icon {
-  width: 170px;
-  height: 170px;
+  width: 230px;
+  height: 230px;
   object-fit: contain;
-  flex: 0 0 170px;
+  flex: 0 0 230px;
 }
 
 .services-page:has(.fleet-item) .fleet-label {

@@ -1995,3 +1995,65 @@ html, body, #root {
   top: 92px;
   text-align: center;
 }
+
+
+/* Facilities header matches the supplied reference image: large title,
+   smaller subtitle and instruction stacked underneath. */
+.services-page .facilities-head {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+
+.services-page .facilities-head > .facilities-title {
+  position: absolute;
+  top: 14px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 12px;
+  font-size: 30px;
+  line-height: 1.15;
+  font-weight: 800;
+  text-align: center;
+  transform: none;
+}
+
+.services-page .facilities-head > .facilities-sub {
+  position: absolute;
+  top: 78px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 12px;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: 500;
+  text-align: center;
+  transform: none;
+}
+
+.services-page .facilities-head > .facilities-hint {
+  position: absolute;
+  top: 112px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 12px;
+  font-size: 14px;
+  line-height: 1.25;
+  font-weight: 500;
+  text-align: center;
+  transform: none;
+}
+
+.services-page .facilities-head > .facilities-rule {
+  display: none;
+}

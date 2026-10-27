@@ -224,7 +224,7 @@ const fleet = [
     cx: 540,
     top: 760,
     w: 352,
-    gap: 36,
+    gap: 8,
     menuImage: './images/fleet/passenger-boats-ortho.png',
     detailImage: './images/fleet-details/passenger-boats-new.jpeg',
     specs: [

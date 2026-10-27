@@ -1729,7 +1729,7 @@ html, body, #root {
 
 .vessels-head {
   position: absolute;
-  top: 232px;
+  top: 218px;
   right: 28px;
   left: 28px;
   z-index: 2;
@@ -1742,7 +1742,7 @@ html, body, #root {
 
 .vessels-scroll {
   position: absolute;
-  top: 292px;
+  top: 278px;
   right: 28px;
   bottom: 24px;
   left: 28px;

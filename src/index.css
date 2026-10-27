@@ -1933,8 +1933,8 @@ html, body, #root {
 
 
 /* GLOBAL PAGE HEADING ALIGNMENT
-   Keep page headings on a dedicated line below the RETURN/HOME navigation.
-   Navigation controls themselves remain untouched. */
+   Match the heading-to-navigation gap shown in the LMS ICAD II BASE reference.
+   Keep RETURN and HOME in their original positions. */
 .services-page > h1,
 .services-page > .services-sub,
 .facilities-head .facilities-title,
@@ -1943,8 +1943,13 @@ html, body, #root {
 .fleet-detail-title,
 .facility-photo-title,
 .board-title,
-.company-intro > h1 {
+.company-intro h1 {
   position: relative;
   top: 34px;
   transform: none;
+}
+
+/* Keep heading groups aligned together on every page. */
+.services-page > .services-sub {
+  margin-top: 16px;
 }

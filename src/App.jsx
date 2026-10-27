@@ -496,10 +496,12 @@ function FacilitiesScreen({ onSelectDetail }) {
   return (
     <div className="services-page">
       <div className="facilities-head">
-        <p className="facilities-sub anim">LMS ICAD II BASE</p>
+        <h2 className="facilities-title anim">
+          LMS ICAD II BASE
+        </h2>
         <span className="services-rule facilities-rule anim" />
-        <p className="facilities-hint anim">90,000 SQ. M. OF INTEGRATED FACILITIES</p>
-        <h2 className="facilities-title anim">Explore the facilities below</h2>
+        <p className="facilities-sub anim">90,000 SQ. M. OF INTEGRATED FACILITIES</p>
+        <p className="facilities-hint anim">Explore the facilities below →</p>
       </div>
 
       <div className="facilities-grid">

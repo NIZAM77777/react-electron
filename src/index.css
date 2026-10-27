@@ -232,7 +232,7 @@ button:focus-visible {
   grid-template-columns: repeat(2, 1fr);
   width: min(100%, 1000px);
   row-gap: 110px;
-  transform: translateY(-115px);
+  transform: translateY(-130px);
 }
 
 .menu-item {

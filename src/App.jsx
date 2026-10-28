@@ -604,12 +604,12 @@ const managementMembers = [
     image: './images/company/management/abin-cutout.png',
   },
   {
-    name: 'MOUSA KHALFAN FARAJ MOHAMED AL MEHAIRBI',
+    name: 'MOUSA KHALFAN AL MEHAIRBI',
     position: 'Manager, Bunkering & Boats Division',
     image: './images/company/management/moosa-khalfan-cutout.png',
   },
   {
-    name: 'GHANEM KHALID FARAJ MOHAMED AL MEHAIRBI',
+    name: 'GHANEM KHALID AL MEHAIRBI',
     position: 'Procurement Manager',
     image: './images/company/management/ghanem-cutout.png',
   },

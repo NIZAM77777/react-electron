@@ -247,6 +247,24 @@ button:focus-visible {
   animation: float 5s ease-in-out infinite alternate;
 }
 
+/* Hide the tiny stray blue mark above the Company Profile building icon only. */
+.menu-item-company {
+  position: relative;
+}
+
+.menu-item-company::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: calc(50% - 13px);
+  width: 12px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(190, 210, 220, 0.88);
+  filter: blur(2px);
+  pointer-events: none;
+}
+
 .menu-item:nth-child(2) { animation-delay: -1.2s; }
 .menu-item:nth-child(3) { animation-delay: -2.4s; }
 .menu-item:nth-child(4) { animation-delay: -3.6s; }

@@ -558,6 +558,11 @@ html, body, #root {
   filter: url('#kfs-photo-clarity');
 }
 
+/* Shift only the BARGES detail photo slightly to the right. */
+.fleet-photo-art-barges {
+  background-position: calc(50% + 12px) center;
+}
+
 .fleet-photo-screen .fleet-detail-nav {
   z-index: 2;
 }

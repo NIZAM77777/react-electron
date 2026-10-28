@@ -2198,8 +2198,8 @@ html, body, #root {
 
 .custom-pointer-image {
   /* Change these two values to resize the custom pointer without affecting the UI. */
-  --custom-pointer-width: 96px;
-  --custom-pointer-height: 96px;
+  --custom-pointer-width: 18px;
+  --custom-pointer-height: 18px;
   position: fixed;
   z-index: 99999;
   left: -200px;
@@ -2208,7 +2208,7 @@ html, body, #root {
   height: var(--custom-pointer-height);
   opacity: 0;
   pointer-events: none;
-  transform: translate(-10%, -10%);
+  transform: translate(-10%, -10%) rotate(0deg);
   transition: opacity 100ms ease;
   will-change: left, top;
 }

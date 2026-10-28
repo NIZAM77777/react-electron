@@ -2150,3 +2150,8 @@ html, body, #root {
   background-size: 258px 86px;
   flex: 0 0 86px;
 }
+
+/* Lower the Board of Directors artwork so its visible bottom aligns with Management Team. */
+.company-directors-image {
+  transform: translateY(18px);
+}

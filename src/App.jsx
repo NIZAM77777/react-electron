@@ -639,7 +639,7 @@ const managementMembers = [
     image: './images/company/management/fabin-cutout.png',
   },
   {
-    name: 'MOHAMMED AHMED MOHAMMED AL-SAEEDI',
+    name: 'MOHAMMED AHMED AL-SAEEDI',
     position: 'PRO Manager',
     image: './images/company/management/mohammed-ahmed-cutout.png',
   },

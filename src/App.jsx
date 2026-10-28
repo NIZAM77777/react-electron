@@ -1065,8 +1065,28 @@ export default function App() {
   const [showBoard, setShowBoard] = useState(false);
   const [companySubpage, setCompanySubpage] = useState(null);
   const [showIntro, setShowIntro] = useState(true);
+  const [pointerPosition, setPointerPosition] = useState({ x: -200, y: -200, visible: false });
   const screenRef = useRef(null);
   const stageRef = useRef(null);
+
+  useEffect(() => {
+    const handlePointerMove = (event) => {
+      if (event.pointerType && event.pointerType !== 'mouse') {
+        setPointerPosition((current) => ({ ...current, visible: false }));
+        return;
+      }
+      setPointerPosition({ x: event.clientX, y: event.clientY, visible: true });
+    };
+    const handlePointerLeave = () => {
+      setPointerPosition((current) => ({ ...current, visible: false }));
+    };
+    window.addEventListener('pointermove', handlePointerMove);
+    document.addEventListener('pointerleave', handlePointerLeave);
+    return () => {
+      window.removeEventListener('pointermove', handlePointerMove);
+      document.removeEventListener('pointerleave', handlePointerLeave);
+    };
+  }, []);
 
   // Warm the Jetty detail image before the visitor opens it so the first
   // navigation does not have to wait for the full-screen JPEG to decode.
@@ -1167,7 +1187,14 @@ export default function App() {
   }
 
   return (
-    <main className="website-shell">
+    <main className="website-shell custom-pointer-active">
+      <div
+        className={`custom-pointer-image${pointerPosition.visible ? ' is-visible' : ''}`}
+        style={{ left: pointerPosition.x, top: pointerPosition.y }}
+        aria-hidden="true"
+      >
+        <img src="./images/pointer.png" alt="" draggable="false" />
+      </div>
       <ImageQualityFilters />
       <Background />
 

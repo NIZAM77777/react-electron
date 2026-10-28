@@ -1027,7 +1027,7 @@ function HomeScreen({ onSelect }) {
   return (
     <div className="menu-grid">
       {sections.map((s) => (
-        <button key={s.id} className="menu-item anim" onClick={() => onSelect(s)}>
+        <button key={s.id} className={`menu-item anim ${s.id === 'company' ? 'menu-item-company' : ''}`} onClick={() => onSelect(s)}>
           <img className="menu-icon" src={s.image} alt="" draggable="false" />
           <span className="menu-label">{s.title.toUpperCase()}</span>
         </button>

@@ -2197,8 +2197,9 @@ html, body, #root {
 }
 
 .custom-pointer-image {
-  --custom-pointer-width: 64px;
-  --custom-pointer-height: 64px;
+  /* Change these two values to resize the custom pointer without affecting the UI. */
+  --custom-pointer-width: 96px;
+  --custom-pointer-height: 96px;
   position: fixed;
   z-index: 99999;
   left: -200px;

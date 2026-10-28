@@ -560,7 +560,7 @@ html, body, #root {
 
 /* Shift only the BARGES detail photo slightly to the right. */
 .fleet-photo-art-barges {
-  background-position: calc(50% + 12px) center;
+  background-position: calc(50% + 40px) center;
 }
 
 .fleet-photo-screen .fleet-detail-nav {

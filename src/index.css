@@ -401,8 +401,8 @@ html, body, #root {
 
 .stage {
   position: absolute;
-  width: 1080px;
-  height: 1080px;
+  width: 1024px;
+  height: 1024px;
   display: flex;
   flex-direction: column;
   top: 50%;

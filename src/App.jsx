@@ -1079,13 +1079,13 @@ export default function App() {
     }
   }, []);
 
-  // Fixed 1080x1080 (1:1) design canvas, scaled to fully fit a square LED wall.
+  // Fixed 1024x1024 (1:1) design canvas, scaled to fully fit a square LED wall.
   // Keeping all layout coordinates in this logical canvas makes the experience
   // behave consistently on a 3x3 wall and on smaller preview windows.
   useLayoutEffect(() => {
     const fit = () => {
       if (!stageRef.current) return;
-      const s = Math.min(window.innerWidth, window.innerHeight) / 1080;
+      const s = Math.min(window.innerWidth, window.innerHeight) / 1024;
       stageRef.current.style.transform = `translate(-50%, -50%) scale(${s})`;
     };
     fit();

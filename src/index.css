@@ -2230,8 +2230,8 @@ html, body, #root {
 
 /* Workshop & Maintenance only: reduce its icon from 125×125px to 120×120px. */
 .facility-item:last-child .facility-icon {
-  width: 120px !important;
-  height: 120px;
-  max-width: 120px;
-  max-height: 120px;
+  width: 110px !important;
+  height: 110px;
+  max-width: 110px;
+  max-height: 110px;
 }

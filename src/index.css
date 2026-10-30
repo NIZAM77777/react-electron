@@ -2143,16 +2143,12 @@ html, body, #root {
 }
 
 
-/* Service detail pages: center the complete points group vertically.
-   The list height adapts to the number of points, so short lists sit lower
-   while longer lists remain balanced without changing any text or styling. */
+/* All eight service detail pages: 55px between points and an 80px–150px title gap. */
 .service-detail-points {
-  top: 53%;
-  bottom: auto;
+  top: 259px;
   margin-top: 0;
-  transform: translateY(-50%);
-  justify-content: center;
-  gap: clamp(18px, 2.8vh, 30px);
+  justify-content: flex-start;
+  gap: 55px;
 }
 
 .service-detail-point {

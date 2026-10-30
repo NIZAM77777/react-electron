@@ -2143,101 +2143,138 @@ html, body, #root {
 }
 
 
-/* Shared defaults for all eight service detail pages.
-   Each service can override top, left, right and the gap between points. */
+/* SHARED DEFAULTS FOR ALL EIGHT SERVICE DETAIL PAGES.
+   Each service below can independently control top, bottom, left, right,
+   gap between bullet rows, line spacing inside wrapped text, and alignment. */
 .service-detail-points {
   --service-points-top: 53%;
+  --service-points-bottom: auto;
   --service-points-left: 10%;
   --service-points-right: 10%;
   --service-points-gap: 55px;
+  --service-points-line-height: 1.6;
+  --service-points-transform: translateY(-50%);
+  --service-points-justify: center;
+
   top: var(--service-points-top);
   right: var(--service-points-right);
-  bottom: auto;
+  bottom: var(--service-points-bottom);
   left: var(--service-points-left);
   margin-top: 0;
-  transform: translateY(-50%);
-  justify-content: center;
+  transform: var(--service-points-transform);
+  justify-content: var(--service-points-justify);
   gap: var(--service-points-gap);
 }
 
 /* INDIVIDUAL SERVICE CONTROLS
-   --service-points-top: move the whole list up/down.
-   --service-points-left: change left margin.
-   --service-points-right: change right margin.
-   --service-points-gap: spacing between bullet rows.
-   Use matching left/right values when you want identical side margins. */
-.service-detail-point {
-  line-height: 1.6;
-}
+   --service-points-top: top position of the list.
+   --service-points-bottom: bottom boundary (use auto if not needed).
+   --service-points-left / --service-points-right: side margins.
+   --service-points-gap: distance between separate bullet rows.
+   --service-points-line-height: distance between wrapped lines within a point.
+   --service-points-transform: use none when setting both top and bottom.
+   --service-points-justify: flex-start, center, or flex-end when using a bounded area.
+   Keep left/right equal when you want matching side margins. */
+
 /* 1. Fleet Owners and Operators */
 .service-detail-points-service-fleet-ownership {
   --service-points-top: 45%;
+  --service-points-bottom: auto;
   --service-points-left: 12.5%;
   --service-points-right: 10%;
   --service-points-gap: 140px;
+  --service-points-line-height: 1.6;
+  --service-points-transform: none;
+  --service-points-justify: flex-start;
 }
 
 /* 2. Offshore EPC & Logistics Support */
 .service-detail-points-service-offshore-epc {
   --service-points-top: 45%;
+  --service-points-bottom: auto;
   --service-points-left: 12.5%;
   --service-points-right: 10%;
   --service-points-gap: 140px;
+  --service-points-line-height: 1.6;
+  --service-points-transform: none;
+  --service-points-justify: flex-start;
 }
-/* Align the first bullet point at the same height */
-.service-detail-points-service-fleet-ownership,
-.service-detail-points-service-offshore-epc {
-  transform: none;
-}
+
 /* 3. Freight Forwarding & Customs Clearance */
 .service-detail-points-service-freight-forwarding {
   --service-points-top: 45%;
+  --service-points-bottom: auto;
   --service-points-left: 12.5%;
   --service-points-right: 10%;
   --service-points-gap: 90px;
+  --service-points-line-height: 1.6;
+  --service-points-transform: translateY(-50%);
+  --service-points-justify: center;
 }
 
 /* 4. Project Cargo Handling and Support */
 .service-detail-points-service-project-cargo {
   --service-points-top: 45%;
+  --service-points-bottom: auto;
   --service-points-left: 12.5%;
   --service-points-right: 10%;
   --service-points-gap: 90px;
+  --service-points-line-height: 1.6;
+  --service-points-transform: translateY(-50%);
+  --service-points-justify: center;
 }
 
 /* 5. Shipbuilding and Repairs */
 .service-detail-points-service-shipbuilding {
   --service-points-top: 38%;
-  --service-points-left: 12.5%; 
+  --service-points-bottom: auto;
+  --service-points-left: 12.5%;
   --service-points-right: 10%;
   --service-points-gap: 90px;
+  --service-points-line-height: 1.6;
+  --service-points-transform: translateY(-50%);
+  --service-points-justify: center;
 }
 
 /* 6. Port Agency and Third Party Ship Management */
 .service-detail-points-service-port-agency {
   --service-points-top: 42%;
+  --service-points-bottom: auto;
   --service-points-left: 12.5%;
   --service-points-right: 10%;
   --service-points-gap: 90px;
+  --service-points-line-height: 1.6;
+  --service-points-transform: translateY(-50%);
+  --service-points-justify: center;
 }
 
 /* 7. Towage Services */
 .service-detail-points-service-tug {
   --service-points-top: 45%;
+  --service-points-bottom: auto;
   --service-points-left: 12.5%;
   --service-points-right: 10%;
   --service-points-gap: 90px;
+  --service-points-line-height: 1.6;
+  --service-points-transform: translateY(-50%);
+  --service-points-justify: center;
 }
 
 /* 8. Offshore Oil & Gas Field Support */
 .service-detail-points-service-oil-gas {
   --service-points-top: 38%;
+  --service-points-bottom: auto;
   --service-points-left: 12.5%;
   --service-points-right: 10%;
   --service-points-gap: 90px;
+  --service-points-line-height: 1.6;
+  --service-points-transform: translateY(-50%);
+  --service-points-justify: center;
 }
 
+/* Apply line spacing per service to every bullet row within that service. */
 .service-detail-point {
+  line-height: var(--service-points-line-height);
   margin: 0;
 }
 

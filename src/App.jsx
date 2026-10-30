@@ -198,7 +198,7 @@ const fleet = [
     label: 'BARGES',
     detailTitle: 'BARGES',
     img: 'barges',
-    cx: 748,
+    cx: 276,
     top: 492,
     w: 385,
     gap: 55,

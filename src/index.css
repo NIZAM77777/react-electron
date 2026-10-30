@@ -533,6 +533,20 @@ html, body, #root {
 
 .fleet-item:hover .fleet-icon { transform: translateY(-6px) scale(1.04); }
 
+/* BARGES only: align the barge artwork with the CREW BOATS row
+   and lift its label to match the CREW BOATS label baseline. */
+.fleet-item-barges .fleet-icon {
+  transform: translateY(35px);
+}
+
+.fleet-item-barges:hover .fleet-icon {
+  transform: translateY(29px) scale(1.04);
+}
+
+.fleet-item-barges .fleet-label {
+  transform: translateY(-25px);
+}
+
 .fleet-item { touch-action: manipulation; }
 
 .fleet-label {

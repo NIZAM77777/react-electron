@@ -299,7 +299,7 @@ function FleetDetailScreen({ fleetItem, onReturn, onHome }) {
         </button>
 
         <h1 className="service-detail-title">{fleetItem.label}</h1>
-        <div className={`service-detail-points service-detail-points-${points.length}`}>
+        <div className={`service-detail-points service-detail-points-${points.length} service-detail-points-service-${fleetItem.img}`}>
           {points.map((point) => (
             <div className="service-detail-point" key={point}>
               <span className="service-detail-point-bullet" aria-hidden="true" />

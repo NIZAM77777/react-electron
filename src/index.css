@@ -2143,11 +2143,16 @@ html, body, #root {
 }
 
 
-/* All eight service detail pages: 55px between points and an 80px–150px title gap. */
+/* All service detail pages: equal horizontal insets and vertically centered content.
+   Keep the established 55px spacing between every pair of bullet points. */
 .service-detail-points {
-  top: 259px;
+  top: 53%;
+  right: 10%;
+  bottom: auto;
+  left: 10%;
   margin-top: 0;
-  justify-content: flex-start;
+  transform: translateY(-50%);
+  justify-content: center;
   gap: 55px;
 }
 

@@ -2178,7 +2178,7 @@ html, body, #root {
 
 /* 1. Fleet Owners and Operators */
 .service-detail-points-service-fleet-ownership {
-  --service-points-top: 45%;
+  --service-points-top: 30%;
   --service-points-bottom: auto;
   --service-points-left: 12.5%;
   --service-points-right: 10%;
@@ -2191,7 +2191,7 @@ html, body, #root {
 /* 2. Offshore EPC & Logistics Support */
 .service-detail-points-service-offshore-epc {
 
-  --service-points-top: 45%;
+  --service-points-top: 30%;
   --service-points-bottom: auto;
   --service-points-left: 12.5%;
   --service-points-right: 10%;
@@ -2205,7 +2205,7 @@ html, body, #root {
 /* 3. Freight Forwarding & Customs Clearance */
 .service-detail-points-service-freight-forwarding {
 
-  --service-points-top: 45%;
+  --service-points-top: 30%;
   --service-points-bottom: auto;
   --service-points-left: 12.5%;
   --service-points-right: 10%;
@@ -2219,7 +2219,7 @@ html, body, #root {
 /* 4. Project Cargo Handling and Support */
 .service-detail-points-service-project-cargo {
 
-  --service-points-top: 45%;
+  --service-points-top: 30%;
   --service-points-bottom: auto;
   --service-points-left: 12.5%;
   --service-points-right: 10%;
@@ -2257,7 +2257,7 @@ html, body, #root {
 /* 7. Towage Services */
 .service-detail-points-service-tug {
 
-  --service-points-top: 45%;
+  --service-points-top: 30%;
   --service-points-bottom: auto;
   --service-points-left: 12.5%;
   --service-points-right: 10%;

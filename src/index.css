@@ -2152,7 +2152,7 @@ html, body, #root {
   margin-top: 0;
   transform: translateY(-50%);
   justify-content: center;
-  gap: 55px;
+  gap: clamp(18px, 2.8vh, 30px);
 }
 
 .service-detail-point {

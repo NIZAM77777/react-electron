@@ -1025,7 +1025,7 @@ html, body, #root {
    WORKSHOP & MAINTENANCE (the fifth item) remains in its original position. */
 .facilities-grid > .facility-item:nth-child(-n+4) {
   position: relative;
-  top: 10px;
+  top: 25px;
 }
 
 /* Center the final facility item on the bottom row when there are five items. */

@@ -2190,6 +2190,7 @@ html, body, #root {
 
 /* 2. Offshore EPC & Logistics Support */
 .service-detail-points-service-offshore-epc {
+
   --service-points-top: 45%;
   --service-points-bottom: auto;
   --service-points-left: 12.5%;
@@ -2199,29 +2200,34 @@ html, body, #root {
   --service-points-transform: none;
   --service-points-justify: flex-start;
 }
+}
 
 /* 3. Freight Forwarding & Customs Clearance */
 .service-detail-points-service-freight-forwarding {
+
   --service-points-top: 45%;
   --service-points-bottom: auto;
   --service-points-left: 12.5%;
   --service-points-right: 10%;
-  --service-points-gap: 90px;
+  --service-points-gap: 140px;
   --service-points-line-height: 1.6;
-  --service-points-transform: translateY(-50%);
-  --service-points-justify: center;
+  --service-points-transform: none;
+  --service-points-justify: flex-start;
+}
 }
 
 /* 4. Project Cargo Handling and Support */
 .service-detail-points-service-project-cargo {
+
   --service-points-top: 45%;
   --service-points-bottom: auto;
   --service-points-left: 12.5%;
   --service-points-right: 10%;
-  --service-points-gap: 90px;
+  --service-points-gap: 140px;
   --service-points-line-height: 1.6;
-  --service-points-transform: translateY(-50%);
-  --service-points-justify: center;
+  --service-points-transform: none;
+  --service-points-justify: flex-start;
+}
 }
 
 /* 5. Shipbuilding and Repairs */
@@ -2250,14 +2256,16 @@ html, body, #root {
 
 /* 7. Towage Services */
 .service-detail-points-service-tug {
+
   --service-points-top: 45%;
   --service-points-bottom: auto;
   --service-points-left: 12.5%;
   --service-points-right: 10%;
-  --service-points-gap: 90px;
+  --service-points-gap: 140px;
   --service-points-line-height: 1.6;
-  --service-points-transform: translateY(-50%);
-  --service-points-justify: center;
+  --service-points-transform: none;
+  --service-points-justify: flex-start;
+}
 }
 
 /* 8. Offshore Oil & Gas Field Support */

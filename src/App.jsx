@@ -43,14 +43,14 @@ const sections = [
 ];
 
 const services = [
-  { label: 'FLEET OWNERSHIP & OPERATIONS', img: 'fleet-ownership', detailImage: './images/service-details/fleet-ownership.png' },
+  { label: 'FLEET OWNERS AND OPERATORS', img: 'fleet-ownership', detailImage: './images/service-details/fleet-ownership.png' },
   { label: 'OFFSHORE EPC & LOGISTICS SUPPORT', img: 'offshore-epc', detailImage: './images/service-details/offshore-epc.png' },
   { label: 'FREIGHT FORWARDING & CUSTOMS CLEARANCE', img: 'freight-forwarding', detailImage: './images/service-details/freight-forwarding.png' },
   { label: 'PROJECT CARGO HANDLING AND SUPPORT', img: 'project-cargo', detailImage: './images/service-details/project-cargo.png' },
   { label: 'SHIPBUILDING AND REPAIRS', img: 'shipbuilding', detailImage: './images/service-details/shipbuilding.png' },
   { label: 'PORT AGENCY AND THIRD PARTY SHIP MANAGEMENT', img: 'port-agency', detailImage: './images/service-details/port-agency.png' },
   { label: 'TOWAGE SERVICES', img: 'tug', detailImage: './images/service-details/tug.png' },
-  { label: 'ONSHORE AND OFFSHORE OIL & GAS FIELD SUPPORT', img: 'oil-gas', detailImage: './images/service-details/oil-gas.png' },
+  { label: 'OFFSHORE OIL & GAS FIELD SUPPORT', img: 'oil-gas', detailImage: './images/service-details/oil-gas.png' },
 ];
 
 const servicePoints = {
@@ -60,7 +60,7 @@ const servicePoints = {
   ],
   'offshore-epc': [
     'MOST OF OUR VESSELS OPERATE WITH NATIONAL OIL MAJORS AND OFFSHORE EPC CONTRACTORS',
-    'OUR FLEET SUPPORTS OFFSHORE FIELD DEVELOPMENT, DRILLING, PRODUCTION, AND EPC OPERATIONS',
+    'OUR FLEET SUPPORTS OFFSHORE FIELD DEVELOPMENT, DRILLING, PRODUCTION, AND EPC PROJECTS',
   ],
   'freight-forwarding': [
     'WE ARE GLOBAL FREIGHT FORWARDERS AND CUSTOMS HOUSE AGENTS',
@@ -72,12 +72,12 @@ const servicePoints = {
     'EXPERTISE IN THE SAFE HANDLING AND TRANSPORTATION OF HEAVY-LIFT AND OVERSIZED CARGO',
   ],
   shipbuilding: [
-    'Shipbuilding and vessel repair services.',
-    'Fully equipped shipyard facilities.',
+    'Shipbuilding and ship repairs.',
+    'Fully fledged shipyard.',
     'Experienced project managers.',
     'Skilled and experienced manpower.',
     'Quality workmanship and safe operations.',
-    'Timely completion and delivery of vessels.',
+    'Timely completion and delivery of vessels.'
   ],
   'port-agency': [
     'In-house team for port agency services.',
@@ -94,13 +94,11 @@ const servicePoints = {
     'Safe and reliable towing operations.',
   ],
   'oil-gas': [
-    'Vessel supply for onshore and offshore oil & gas operations',
-    'Offshore field support and marine logistics',
-    'Crew and personnel transportation',
-    'Equipment and material transportation',
-    'Supply and support vessel services',
-    'Operational and logistics support for oil & gas fields',
-    'Reliable marine support for field operations',
+    'Supply of all types of offshore support vessels.',
+    'Personnel transportation to offshore locations.',
+    'Equipment and material transportation.',
+    'Operational and logistics support for oil and gas fields.',
+    'Reliable marine support for offshore field operations.',
   ],
 };
 
@@ -119,7 +117,7 @@ const facilityPoints = {
     'TRAVEL LIFT WITH A LIFTING CAPACITY OF 600 TONS',
   ],
   'marine-jetty': [
-    '180 M QUAY WALL',
+    '200 M QUAY WALL',
     'DEDICATED RO-RO FACILITY',
     'DEDICATED SLIPWAY',
     'BERTHING FACILITIES AND STORAGE YARD',
@@ -479,7 +477,7 @@ const facilities = [
   { label: 'HEAD OFFICE', img: 'head-office', w: 260, detailImage: './images/facility-details/head-office-new.jpeg' },
   { label: 'WAREHOUSE & STORAGE', img: 'warehouse-storage', w: 245, detailImage: './images/facility-details/warehouse-new.jpeg' },
   { label: 'SHIPYARD FACILITY', img: 'shipyard-facility', w: 262, detailImage: './images/facility-details/shipyard-new.jpeg' },
-  { label: 'MARINE JETTY', detailTitle: 'JETTY FACILITY', img: 'marine-jetty', w: 255, icon: './images/facilities/marine-jetty-v2.png', detailImage: './images/facility-details/marine-jetty-new.jpeg' },
+  { label: 'MARINE JETTY', detailTitle: 'JETTY FACILITY', img: 'marine-jetty', w: 255, icon: './images/facilities/marine-jetty-v2.png', detailImage: './images/facility-details/marine-jetty.jpeg' },
   { label: 'WORKSHOP & MAINTENANCE', img: 'workshop-maintenance', w: 140, icon: './images/facilities/workshop-maintenance-v2.png', detailImage: './images/facility-details/workshop-new.jpeg' },
 ];
 

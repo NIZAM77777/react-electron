@@ -2144,14 +2144,16 @@ html, body, #root {
 
 
 /* Shared defaults for all eight service detail pages.
-   Per-service values below let you tune vertical position and point spacing independently. */
+   Each service can override top, left, right and the gap between points. */
 .service-detail-points {
   --service-points-top: 53%;
+  --service-points-left: 10%;
+  --service-points-right: 10%;
   --service-points-gap: 55px;
   top: var(--service-points-top);
-  right: 10%;
+  right: var(--service-points-right);
   bottom: auto;
-  left: 10%;
+  left: var(--service-points-left);
   margin-top: 0;
   transform: translateY(-50%);
   justify-content: center;
@@ -2159,55 +2161,73 @@ html, body, #root {
 }
 
 /* INDIVIDUAL SERVICE CONTROLS
-   Change --service-points-top to move that service's whole list up/down.
-   Change --service-points-gap to change spacing between its bullet rows.
-   Keep left/right at 10% for equal margins. */
+   --service-points-top: move the whole list up/down.
+   --service-points-left: change left margin.
+   --service-points-right: change right margin.
+   --service-points-gap: spacing between bullet rows.
+   Use matching left/right values when you want identical side margins. */
 
 /* 1. Fleet Owners and Operators */
 .service-detail-points-service-fleet-ownership {
   --service-points-top: 53%;
+  --service-points-left: 10%;
+  --service-points-right: 10%;
   --service-points-gap: 55px;
 }
 
 /* 2. Offshore EPC & Logistics Support */
 .service-detail-points-service-offshore-epc {
   --service-points-top: 53%;
+  --service-points-left: 10%;
+  --service-points-right: 10%;
   --service-points-gap: 55px;
 }
 
 /* 3. Freight Forwarding & Customs Clearance */
 .service-detail-points-service-freight-forwarding {
   --service-points-top: 53%;
+  --service-points-left: 10%;
+  --service-points-right: 10%;
   --service-points-gap: 55px;
 }
 
 /* 4. Project Cargo Handling and Support */
 .service-detail-points-service-project-cargo {
   --service-points-top: 53%;
+  --service-points-left: 10%;
+  --service-points-right: 10%;
   --service-points-gap: 55px;
 }
 
 /* 5. Shipbuilding and Repairs */
 .service-detail-points-service-shipbuilding {
   --service-points-top: 53%;
+  --service-points-left: 10%;
+  --service-points-right: 10%;
   --service-points-gap: 55px;
 }
 
 /* 6. Port Agency and Third Party Ship Management */
 .service-detail-points-service-port-agency {
   --service-points-top: 53%;
+  --service-points-left: 10%;
+  --service-points-right: 10%;
   --service-points-gap: 55px;
 }
 
 /* 7. Towage Services */
 .service-detail-points-service-tug {
   --service-points-top: 53%;
+  --service-points-left: 10%;
+  --service-points-right: 10%;
   --service-points-gap: 55px;
 }
 
 /* 8. Offshore Oil & Gas Field Support */
 .service-detail-points-service-oil-gas {
   --service-points-top: 53%;
+  --service-points-left: 10%;
+  --service-points-right: 10%;
   --service-points-gap: 55px;
 }
 

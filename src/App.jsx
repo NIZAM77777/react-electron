@@ -254,7 +254,7 @@ function FleetScreen({ onSelectFleet }) {
       {fleet.map((f) => (
         <button
           key={f.img}
-          className="fleet-item anim"
+          className={`fleet-item anim ${f.img === "barges" ? "fleet-item-barges" : ""}`}
           onClick={() => onSelectFleet(f)}
           style={{ left: f.cx - f.w / 2, top: f.top, width: f.w }}
         >

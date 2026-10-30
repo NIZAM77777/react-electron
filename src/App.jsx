@@ -63,35 +63,29 @@ const servicePoints = {
     'OUR FLEET SUPPORTS OFFSHORE FIELD DEVELOPMENT, DRILLING, PRODUCTION, AND EPC PROJECTS',
   ],
   'freight-forwarding': [
-    'WE ARE GLOBAL FREIGHT FORWARDERS AND CUSTOMS HOUSE AGENTS',
-    'GLOBAL FREIGHT FORWARDING SERVICES',
-    'COMPREHENSIVE CUSTOMS CLEARANCE AND CUSTOMS HOUSE AGENCY SERVICES',
+    'Global freight forwarding services.',
+    'Customs house Agents.',
   ],
   'project-cargo': [
     'SPECIALIZED IN PROJECT CARGO TRANSPORTATION AND HANDLING',
     'EXPERTISE IN THE SAFE HANDLING AND TRANSPORTATION OF HEAVY-LIFT AND OVERSIZED CARGO',
   ],
-  shipbuilding: [
+  'shipbuilding': [
     'Shipbuilding and ship repairs.',
     'Fully fledged shipyard.',
     'Experienced project managers.',
     'Skilled and experienced manpower.',
     'Quality workmanship and safe operations.',
-    'Timely completion and delivery of vessels.'
+    'Timely completion and delivery of vessels.',
   ],
   'port-agency': [
-    'In-house team for port agency services.',
-    'Handling of all vessel agency requirements.',
-    'Professional and efficient port support.',
-    'Ship management services for vessels.',
-    'Experienced team for smooth vessel operations.',
+    'Licensed agents for all Abu Dhabi ports.',
+    'Third-party full-spectrum ship management.',
     'Reliable and timely service.',
   ],
-  tug: [
-    'Large fleet of tugs available.',
-    'Towing services for various requirements.',
-    'Tug assistance for vessels and marine operations.',
-    'Safe and reliable towing operations.',
+  'tug': [
+    'A well-diversified fleet of tow tugs and AHTs.',
+    'Towing and assistance for various marine operations.',
   ],
   'oil-gas': [
     'Supply of all types of offshore support vessels.',

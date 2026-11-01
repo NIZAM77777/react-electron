@@ -1255,7 +1255,7 @@ export default function App() {
               <header className="top-bar">
                 <button
                   className="bar-button"
-                  onClick={() => (active ? go(null) : openIntroVideo())
+                  onClick={() => (active ? go(null) : openIntroVideo())}
                   aria-label="Return"
                 >
                   <ChevronLeft size={26} strokeWidth={1.5} />

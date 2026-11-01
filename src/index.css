@@ -1456,6 +1456,20 @@ html, body, #root {
   text-shadow: 0 3px 10px rgba(0, 25, 55, 0.8);
 }
 
+/* Facility detail pages: enlarge the invisible RETURN/HOME hit areas explicitly. */
+.facility-photo-screen .fleet-detail-nav {
+  position: absolute;
+  z-index: 10;
+}
+
+.facility-photo-screen .fleet-detail-nav::before {
+  content: '';
+  position: absolute;
+  inset: -70px -85px;
+  background: transparent;
+  pointer-events: auto;
+}
+
 .facility-photo-screen .fleet-detail-nav svg {
   width: 42px;
   height: 42px;

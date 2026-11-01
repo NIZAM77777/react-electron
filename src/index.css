@@ -2103,10 +2103,10 @@ html, body, #root {
   text-align: center;
 }
 
-/* All 8 service-detail page headings: move upward together.
+/* All 8 service-detail page headings: move downward together.
    Change this top value to adjust every service heading at once. */
 .service-detail-title {
-  top: 70px;
+  top: 105px;
 }
 
 

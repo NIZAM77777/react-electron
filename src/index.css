@@ -137,6 +137,7 @@ button:focus-visible {
 }
 
 .bar-button {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 12px;
@@ -149,6 +150,14 @@ button:focus-visible {
   letter-spacing: 0.1em;
   text-shadow: 0 1px 8px rgba(0, 40, 80, 0.35);
   transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* Enlarge the invisible hit area without changing the visible label or layout. */
+.bar-button::before {
+  content: '';
+  position: absolute;
+  inset: -22px -36px;
+  background: transparent;
 }
 
 .bar-button:hover {

@@ -156,7 +156,7 @@ button:focus-visible {
 .bar-button::before {
   content: '';
   position: absolute;
-  inset: -22px -36px;
+  inset: -70px -85px;
   background: transparent;
 }
 

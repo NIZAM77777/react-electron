@@ -2390,6 +2390,17 @@ html, body, #root {
   --service-points-justify: center;
 }
 
+/* Keep the detail copy centered consistently across all eight services. */
+.service-detail-points {
+  top: 50%;
+  right: auto;
+  bottom: auto;
+  left: 50%;
+  width: 75%;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+}
+
 
 /* Fleet category page only: keep vessel artwork visually separated and uncluttered. */
 .services-page:has(.fleet-item) .fleet-icon {

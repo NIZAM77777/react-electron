@@ -510,11 +510,18 @@ html, body, #root {
 }
 
 /* Independent size controls: change width/height here without affecting other icons. */
-.service-item-tug .service-icon,
+/* .service-item-tug .service-icon,
 .service-item-tug .service-icon img {
   width: 130px;
   height: 130px;
+} */
+
+.service-item-tug .service-icon img {
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
 }
+
 
 .service-icon img {
   width: 125px;

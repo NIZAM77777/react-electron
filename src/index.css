@@ -2529,3 +2529,38 @@ html, body, #root {
   pointer-events: none;
   animation: tapExplorePulse 2.2s ease-in-out infinite;
 }
+
+
+/* Custom mouse pointer image. Only the invisible cursor behavior changes. */
+.website-shell.custom-pointer-active,
+.website-shell.custom-pointer-active * {
+  cursor: none !important;
+}
+
+.custom-pointer-image {
+  position: fixed;
+  z-index: 99999;
+  left: -100px;
+  top: -100px;
+  width: 28px;
+  height: 28px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-10%, -10%);
+  transition: opacity 100ms ease;
+  will-change: left, top;
+}
+
+.custom-pointer-image.is-visible {
+  opacity: 1;
+}
+
+.custom-pointer-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+}

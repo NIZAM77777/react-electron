@@ -984,6 +984,22 @@ function Background() {
   );
 }
 
+function LandingScreen({ onEnter }) {
+  function handleKeyDown(event) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      onEnter();
+    }
+  }
+
+  return (
+    <button className="landing-screen" onPointerDown={onEnter} onKeyDown={handleKeyDown} aria-label="Open intro video">
+      <img className="landing-logo" src="./images/logo-exact.png" alt="Khalid Faraj Shipping" draggable="false" />
+      <span className="landing-tap-to-explore" aria-hidden="true">TAP TO EXPLORE</span>
+    </button>
+  );
+}
+
 function IntroScreen({ onEnter }) {
   function handleKeyDown(event) {
     if (event.key === 'Enter' || event.key === ' ') {
@@ -993,17 +1009,11 @@ function IntroScreen({ onEnter }) {
   }
 
   return (
-    <button
-      className="intro-screen"
-      onPointerDown={onEnter}
-      onKeyDown={handleKeyDown}
-      aria-label="Open home page"
-    >
+    <button className="intro-screen" onPointerDown={onEnter} onKeyDown={handleKeyDown} aria-label="Open main menu">
       <video className="intro-video" autoPlay muted loop playsInline preload="auto">
-        <source src="./videos/intro-enhanced-2160.mp4" type="video/mp4" />
-        <source src="./videos/intro.mp4" type="video/mp4" />
+        <source src="./videos/intro%20video.mp4" type="video/mp4" />
       </video>
-      <span className="intro-tap-to-explore" aria-hidden="true">TAP TO EXPLORE</span>
+      <span className="intro-tap-to-explore" aria-hidden="true">CLICK TO CONTINUE</span>
     </button>
   );
 }
@@ -1057,7 +1067,8 @@ export default function App() {
   const [activeFleet, setActiveFleet] = useState(null);
   const [showBoard, setShowBoard] = useState(false);
   const [companySubpage, setCompanySubpage] = useState(null);
-  const [showIntro, setShowIntro] = useState(true);
+  const [showLanding, setShowLanding] = useState(true);
+  const [showIntro, setShowIntro] = useState(false);
   const [pointerPosition, setPointerPosition] = useState({ x: -100, y: -100, visible: false });
   const screenRef = useRef(null);
   const stageRef = useRef(null);
@@ -1136,11 +1147,21 @@ export default function App() {
     setActiveFleet(null);
   }
 
-  function goToIntro() {
+  function goToLanding() {
     setActiveFleet(null);
     setShowBoard(false);
     setCompanySubpage(null);
     setActive(null);
+    setShowIntro(false);
+    setShowLanding(true);
+  }
+
+  function openIntroVideo() {
+    setActiveFleet(null);
+    setShowBoard(false);
+    setCompanySubpage(null);
+    setActive(null);
+    setShowLanding(false);
     setShowIntro(true);
   }
 
@@ -1149,6 +1170,7 @@ export default function App() {
     setShowBoard(false);
     setCompanySubpage(null);
     setActive(null);
+    setShowLanding(false);
     setShowIntro(false);
   }
 
@@ -1223,7 +1245,9 @@ export default function App() {
       <Background />
 
       <div className="stage" ref={stageRef}>
-        {showIntro ? (
+        {showLanding ? (
+          <LandingScreen onEnter={openIntroVideo} />
+        ) : showIntro ? (
           <IntroScreen onEnter={openHome} />
         ) : (
           <>
@@ -1231,14 +1255,14 @@ export default function App() {
               <header className="top-bar">
                 <button
                   className="bar-button"
-                  onClick={() => (active ? go(null) : goToIntro())}
+                  onClick={() => (active ? go(null) : openIntroVideo())
                   aria-label="Return"
                 >
                   <ChevronLeft size={26} strokeWidth={1.5} />
                   <span>RETURN</span>
                 </button>
 
-                <button className="bar-button" onClick={goToIntro} aria-label="Home">
+                <button className="bar-button" onClick={goToLanding} aria-label="Home">
                   <Home size={24} strokeWidth={1.5} />
                   <span>HOME</span>
                 </button>
@@ -1249,16 +1273,16 @@ export default function App() {
 
             <div className="scene-content" ref={screenRef}>
               {showBoard ? (
-                <BoardScreen onReturn={closeBoard} onHome={goToIntro} />
+                <BoardScreen onReturn={closeBoard} onHome={goToLanding} />
               ) : companySubpage === 'vessels' ? (
-                <VesselsScreen onReturn={() => setCompanySubpage(null)} onHome={goToIntro} />
+                <VesselsScreen onReturn={() => setCompanySubpage(null)} onHome={goToLanding} />
               ) : companySubpage ? (
                 <ManagementScreen
                   onReturn={() => setCompanySubpage(null)}
-                  onHome={goToIntro}
+                  onHome={goToLanding}
                 />
               ) : activeFleet ? (
-                <FleetDetailScreen fleetItem={activeFleet} onReturn={closeFleet} onHome={goToIntro} />
+                <FleetDetailScreen fleetItem={activeFleet} onReturn={closeFleet} onHome={goToLanding} />
               ) : active?.id === 'services' ? (
                 <ServicesScreen onSelectDetail={openFleet} />
               ) : active?.id === 'fleet' ? (

@@ -1299,14 +1299,14 @@ export default function App() {
               {showBoard ? (
                 <BoardScreen onReturn={closeBoard} onHome={goToLanding} />
               ) : companySubpage === 'vessels' ? (
-                <VesselsScreen onReturn={() => setCompanySubpage(null)} onHome={goToIntro} />
+                <VesselsScreen onReturn={() => setCompanySubpage(null)} onHome={goToLanding} />
               ) : companySubpage ? (
                 <ManagementScreen
                   onReturn={() => setCompanySubpage(null)}
-                  onHome={goToIntro}
+                  onHome={goToLanding}
                 />
               ) : activeFleet ? (
-                <FleetDetailScreen fleetItem={activeFleet} onReturn={closeFleet} onHome={goToIntro} />
+                <FleetDetailScreen fleetItem={activeFleet} onReturn={closeFleet} onHome={goToLanding} />
               ) : active?.id === 'services' ? (
                 <ServicesScreen onSelectDetail={openFleet} />
               ) : active?.id === 'fleet' ? (

@@ -2553,13 +2553,20 @@ html, body, #root {
   height: 28px;
   opacity: 0;
   pointer-events: none;
-  transform: translate(-10%, -10%);
-  transition: opacity 100ms ease;
-  will-change: left, top;
+  transform: translate(-10%, -10%) scale(1);
+  transform-origin: top left;
+  transition: opacity 160ms ease, transform 160ms ease;
+  will-change: left, top, transform;
 }
 
 .custom-pointer-image.is-visible {
-  opacity: 1;
+  opacity: 0.72;
+}
+
+.custom-pointer-image:hover,
+.custom-pointer-image.is-visible:hover {
+  opacity: 0.9;
+  transform: translate(-10%, -10%) scale(1.12);
 }
 
 .custom-pointer-image img {

@@ -509,21 +509,24 @@ html, body, #root {
   height: 125px;
 }
 
-/* Independent size controls: change width/height here without affecting other icons. */
-/* .service-item-tug .service-icon,
-.service-item-tug .service-icon img {
-  width: 130px;
-  height: 130px;
-} */
+/* TOWAGE SERVICES ICON CONTROLS — only affects the towage icon.
+   Increase icon size here; the label size and position are controlled separately below. */
+.service-item-tug {
+  --towage-icon-size: 150px; /* Increase this value to make the icon larger */
+  --towage-item-x: 0px;      /* Move the whole towage item left/right */
+  --towage-item-y: 0px;      /* Move the whole towage item up/down */
+  transform: translate(var(--towage-item-x), var(--towage-item-y));
+}
 
 .service-item-tug .service-icon {
-  width: 150px;
-  height: 150px;
+  width: var(--towage-icon-size);
+  height: var(--towage-icon-size);
+  flex: 0 0 var(--towage-icon-size);
 }
 
 .service-item-tug .service-icon img {
-  width: 150px;
-  height: 150px;
+  width: var(--towage-icon-size);
+  height: var(--towage-icon-size);
   max-width: none;
   max-height: none;
   object-fit: contain;
@@ -560,10 +563,10 @@ html, body, #root {
 
 /* Align the single-line TOWAGE SERVICES label with the first line of the
    two-line OFFSHORE OIL & GAS FIELD SUPPORT label beside it. */
-/* TOWAGE SERVICES label: adjust these values to control only this text. */
+/* TOWAGE SERVICES LABEL CONTROLS — these settings do not change the icon size. */
 .service-item-tug .service-label {
-  font-size: 19px;                 /* Change the text size */
-  transform: translate(0px, -26px); /* Change position: first value = left/right, second = up/down */
+  font-size: 19px;                    /* Change only the text size */
+  transform: translate(0px, -26px);   /* Move text: first value = left/right, second = up/down */
 }
 /* FLEET PAGE (reuses .services-page, .services-rule, .services-sub for the title) */
 

@@ -2103,6 +2103,12 @@ html, body, #root {
   text-align: center;
 }
 
+/* All 8 service-detail page headings: move upward together.
+   Change this top value to adjust every service heading at once. */
+.service-detail-title {
+  top: 70px;
+}
+
 
 /* Facilities header matches the supplied reference image: large title,
    smaller subtitle and instruction stacked underneath. */

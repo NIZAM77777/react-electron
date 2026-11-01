@@ -820,6 +820,14 @@ html, body, #root {
   text-shadow: 0 3px 10px rgba(0, 25, 55, 0.8);
 }
 
+/* Match the larger invisible RETURN/HOME hit area on all detail pages. */
+.fleet-detail-nav::before {
+  content: '';
+  position: absolute;
+  inset: -70px -85px;
+  background: transparent;
+}
+
 .fleet-detail-nav svg {
   width: 42px;
   height: 42px;

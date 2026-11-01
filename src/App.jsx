@@ -1178,12 +1178,12 @@ export default function App() {
     const resetInactivityTimer = () => {
       window.clearTimeout(inactivityTimer);
       inactivityTimer = window.setTimeout(() => {
-        setActiveFleet(null);
-        setShowBoard(false);
-        setCompanySubpage(null);
-        setActive(null);
-        setShowIntro(false);
-      }, 20_000);
+  setActiveFleet(null);
+  setShowBoard(false);
+  setCompanySubpage(null);
+  setActive(null);
+  setShowIntro(true);
+}, 15_000);
     };
 
     const activityEvents = ['pointerdown', 'pointermove', 'keydown', 'touchstart', 'click'];

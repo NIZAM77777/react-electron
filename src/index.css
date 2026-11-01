@@ -120,23 +120,31 @@ button:focus-visible {
 /* TOP BAR */
 
 .top-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  height: 64px;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-between;
-  padding: 28px 6%;
+  padding: 0;
 }
 
 .bar-button {
+  position: absolute;
+  top: 0;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: 12px;
-  /* Broad invisible hit area across each top corner. */
-  width: 24%;
-  min-width: 112px;
-  min-height: 112px;
-  padding: 28px 0;
-  margin: -28px 0;
+  /* Clickable zone matches the top corner area shown in the reference. */
+  width: 25%;
+  height: 64px;
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  margin: 0;
   border: 0;
   background: none;
   cursor: pointer;
@@ -144,21 +152,24 @@ button:focus-visible {
   font-weight: 400;
   letter-spacing: 0.1em;
   text-shadow: 0 1px 8px rgba(0, 40, 80, 0.35);
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition: opacity 0.25s ease;
 }
 
 .bar-button:hover {
   opacity: 0.8;
-  transform: translateY(-2px);
 }
 
-/* Keep the visible labels in place while making the full top-corner zones tappable. */
+/* Keep the visible labels in their usual positions inside the larger hit zones. */
 .top-bar .bar-button:first-child {
+  left: 0;
   justify-content: flex-start;
+  padding-left: 6%;
 }
 
 .top-bar .bar-button:last-child {
+  right: 0;
   justify-content: flex-end;
+  padding-right: 6%;
 }
 
 /* LOGO */

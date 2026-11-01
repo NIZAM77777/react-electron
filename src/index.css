@@ -517,13 +517,13 @@ html, body, #root {
 } */
 
 .service-item-tug .service-icon {
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
 }
 
 .service-item-tug .service-icon img {
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
   max-width: none;
   max-height: none;
   object-fit: contain;

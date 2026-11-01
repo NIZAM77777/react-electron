@@ -561,7 +561,7 @@ html, body, #root {
 /* Align the single-line TOWAGE SERVICES label with the first line of the
    two-line OFFSHORE OIL & GAS FIELD SUPPORT label beside it. */
 .service-item-tug .service-label {
-  transform: translateY(-8px);
+  transform: translateY(-21px);
 }
 /* FLEET PAGE (reuses .services-page, .services-rule, .services-sub for the title) */
 

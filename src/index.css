@@ -140,8 +140,8 @@ button:focus-visible {
   align-items: center;
   gap: 12px;
   /* ADJUST THESE TWO VALUES to control the invisible HOME/RETURN hit area. */
-  width: 32%;
-  height: 90px;
+  width: 62%;
+  height: 110px;
   min-width: 0;
   min-height: 0;
   padding: 0;

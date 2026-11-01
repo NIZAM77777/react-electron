@@ -1152,23 +1152,45 @@ export default function App() {
     setShowIntro(false);
   }
 
-  // Display the image from public/images/pointer/pointer.png as the custom mouse pointer.
+  // Display the custom pointer and ease only its movement toward the mouse position.
   useEffect(() => {
+    let targetX = -100;
+    let targetY = -100;
+    let currentX = -100;
+    let currentY = -100;
+    let animationFrame;
+    let visible = false;
+
+    const animatePointer = () => {
+      // Lower this factor to make pointer movement slower; raise it to make it faster.
+      const movementSpeed = 0.12;
+      currentX += (targetX - currentX) * movementSpeed;
+      currentY += (targetY - currentY) * movementSpeed;
+      setPointerPosition({ x: currentX, y: currentY, visible });
+      animationFrame = window.requestAnimationFrame(animatePointer);
+    };
+
     const handlePointerMove = (event) => {
       if (event.pointerType && event.pointerType !== 'mouse') {
-        setPointerPosition((current) => ({ ...current, visible: false }));
+        visible = false;
         return;
       }
-      setPointerPosition({ x: event.clientX, y: event.clientY, visible: true });
+      targetX = event.clientX;
+      targetY = event.clientY;
+      visible = true;
     };
     const handlePointerLeave = () => {
-      setPointerPosition((current) => ({ ...current, visible: false }));
+      visible = false;
     };
+
     window.addEventListener('pointermove', handlePointerMove);
     document.addEventListener('pointerleave', handlePointerLeave);
+    animationFrame = window.requestAnimationFrame(animatePointer);
+
     return () => {
       window.removeEventListener('pointermove', handlePointerMove);
       document.removeEventListener('pointerleave', handlePointerLeave);
+      window.cancelAnimationFrame(animationFrame);
     };
   }, []);
 

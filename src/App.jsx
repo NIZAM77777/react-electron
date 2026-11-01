@@ -1003,6 +1003,7 @@ function IntroScreen({ onEnter }) {
         <source src="./videos/intro-enhanced-2160.mp4" type="video/mp4" />
         <source src="./videos/intro.mp4" type="video/mp4" />
       </video>
+      <span className="intro-tap-to-explore" aria-hidden="true">TAP TO EXPLORE</span>
     </button>
   );
 }
@@ -1272,14 +1273,7 @@ export default function App() {
               ) : active ? (
                 <DetailScreen section={active} />
               ) : (
-                <>
-                  <HomeScreen onSelect={go} />
-                  <div className="tap-to-explore" aria-hidden="true">
-                    <span className="tap-to-explore-line" />
-                    <span className="tap-to-explore-text">TAP TO EXPLORE</span>
-                    <span className="tap-to-explore-line" />
-                  </div>
-                </>
+<HomeScreen onSelect={go} />
               )}
             </div>
           </>

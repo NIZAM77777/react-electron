@@ -1058,6 +1058,7 @@ export default function App() {
   const [showBoard, setShowBoard] = useState(false);
   const [companySubpage, setCompanySubpage] = useState(null);
   const [showIntro, setShowIntro] = useState(true);
+  const [pointerPosition, setPointerPosition] = useState({ x: -100, y: -100, visible: false });
   const screenRef = useRef(null);
   const stageRef = useRef(null);
 
@@ -1151,6 +1152,26 @@ export default function App() {
     setShowIntro(false);
   }
 
+  // Display the image from public/images/pointer/pointer.png as the custom mouse pointer.
+  useEffect(() => {
+    const handlePointerMove = (event) => {
+      if (event.pointerType && event.pointerType !== 'mouse') {
+        setPointerPosition((current) => ({ ...current, visible: false }));
+        return;
+      }
+      setPointerPosition({ x: event.clientX, y: event.clientY, visible: true });
+    };
+    const handlePointerLeave = () => {
+      setPointerPosition((current) => ({ ...current, visible: false }));
+    };
+    window.addEventListener('pointermove', handlePointerMove);
+    document.addEventListener('pointerleave', handlePointerLeave);
+    return () => {
+      window.removeEventListener('pointermove', handlePointerMove);
+      document.removeEventListener('pointerleave', handlePointerLeave);
+    };
+  }, []);
+
   // Return to the intro video after 60 seconds without user interaction.
   useEffect(() => {
     if (showIntro) return undefined;
@@ -1190,7 +1211,14 @@ export default function App() {
   }
 
   return (
-    <main className="website-shell">
+    <main className="website-shell custom-pointer-active">
+      <div
+        className={`custom-pointer-image${pointerPosition.visible ? ' is-visible' : ''}`}
+        style={{ left: pointerPosition.x, top: pointerPosition.y }}
+        aria-hidden="true"
+      >
+        <img src="./images/pointer/pointer.png" alt="" draggable="false" />
+      </div>
       <ImageQualityFilters />
       <Background />
 

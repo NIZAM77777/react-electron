@@ -1194,10 +1194,9 @@ export default function App() {
     };
   }, []);
 
-  // Return to the landing screen after 60 seconds without user interaction.
+  // Return to the landing screen after 60 seconds without user interaction,
+  // including while the intro video screen is displayed.
   useEffect(() => {
-    if (showIntro) return undefined;
-
     let inactivityTimer;
     const resetInactivityTimer = () => {
       window.clearTimeout(inactivityTimer);

@@ -1063,7 +1063,6 @@ html, body, #root {
   background: none;
   cursor: pointer;
 }
-
 /* Move only the first four facility icons and labels slightly downward.
    WORKSHOP & MAINTENANCE (the fifth item) remains in its original position. */
 .facilities-grid > .facility-item:nth-child(-n+4) {
@@ -2464,8 +2463,8 @@ html, body, #root {
 }
 
 .facility-item:last-child .facility-icon {
-  width: 110px !important;
-  height: 110px;
+  width: 95px !important;
+  height: 95px;
   max-width: 110px;
   max-height: 110px;
 }

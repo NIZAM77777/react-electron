@@ -135,8 +135,7 @@ button:focus-visible {
   left: 0;
   right: 0;
   z-index: 5;
-  /* Adjust this value to change the clickable area's height. */
-  height: 90px;
+  height: 64px;
   display: flex;
   align-items: stretch;
   justify-content: space-between;
@@ -149,9 +148,9 @@ button:focus-visible {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  /* ADJUST THESE TWO VALUES to control the invisible HOME/RETURN hit area. */
-  width: 32%;
-  height: 90px;
+  /* Clickable zone matches the top corner area shown in the reference. */
+  width: 25%;
+  height: 64px;
   min-width: 0;
   min-height: 0;
   padding: 0;

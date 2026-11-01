@@ -1085,7 +1085,7 @@ export default function App() {
   useEffect(() => {
     const image = new Image();
     image.decoding = 'async';
-    image.src = './images/facility-details/marine-jetty-new.jpeg';
+    image.src = './images/facility-details/marine-jetty.jpeg';
     if (typeof image.decode === 'function') {
       image.decode().catch(() => {});
     }

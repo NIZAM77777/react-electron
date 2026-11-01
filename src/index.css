@@ -2415,3 +2415,49 @@ html, body, #root {
   max-width: 110px;
   max-height: 110px;
 }
+
+
+/* Highlighted home-screen touch prompt */
+.tap-to-explore {
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  bottom: 34px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  width: max-content;
+  max-width: 90%;
+  pointer-events: none;
+  animation: tapExplorePulse 2.2s ease-in-out infinite;
+}
+
+.tap-to-explore-text {
+  color: #fff;
+  font-family: Manrope, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  white-space: nowrap;
+  text-shadow: 0 0 8px rgba(31, 169, 227, 0.95), 0 0 22px rgba(31, 169, 227, 0.8), 0 2px 8px rgba(0, 20, 45, 0.95);
+}
+
+.tap-to-explore-line {
+  display: block;
+  width: 48px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, transparent, #8deaff, #fff);
+  box-shadow: 0 0 9px rgba(31, 169, 227, 0.95);
+}
+
+.tap-to-explore-line:last-child {
+  transform: scaleX(-1);
+}
+
+@keyframes tapExplorePulse {
+  0%, 100% { opacity: 0.78; filter: drop-shadow(0 0 2px rgba(31, 169, 227, 0.25)); }
+  50% { opacity: 1; filter: drop-shadow(0 0 9px rgba(31, 169, 227, 0.7)); }
+}

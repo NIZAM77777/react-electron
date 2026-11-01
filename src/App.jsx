@@ -1194,7 +1194,7 @@ export default function App() {
     };
   }, []);
 
-  // Return to the intro video after 60 seconds without user interaction.
+  // Return to the landing screen after 60 seconds without user interaction.
   useEffect(() => {
     if (showIntro) return undefined;
 
@@ -1202,12 +1202,13 @@ export default function App() {
     const resetInactivityTimer = () => {
       window.clearTimeout(inactivityTimer);
       inactivityTimer = window.setTimeout(() => {
-  setActiveFleet(null);
-  setShowBoard(false);
-  setCompanySubpage(null);
-  setActive(null);
-  setShowIntro(true);
-}, 60_000);
+        setActiveFleet(null);
+        setShowBoard(false);
+        setCompanySubpage(null);
+        setActive(null);
+        setShowIntro(false);
+        setShowLanding(true);
+      }, 60_000);
     };
 
     const activityEvents = ['pointerdown', 'pointermove', 'keydown', 'touchstart', 'click'];

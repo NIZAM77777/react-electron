@@ -102,6 +102,16 @@ button:focus-visible {
   touch-action: manipulation;
 }
 
+/* Darken only the intro video with a neutral black overlay. */
+.intro-screen::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.22);
+  pointer-events: none;
+}
+
 .intro-video {
   display: block;
   width: 100%;

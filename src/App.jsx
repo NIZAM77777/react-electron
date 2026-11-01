@@ -1170,6 +1170,36 @@ export default function App() {
     setShowIntro(false);
   }
 
+  // Return to the main home menu after 20 seconds without user interaction.
+  useEffect(() => {
+    if (showIntro) return undefined;
+
+    let inactivityTimer;
+    const resetInactivityTimer = () => {
+      window.clearTimeout(inactivityTimer);
+      inactivityTimer = window.setTimeout(() => {
+        setActiveFleet(null);
+        setShowBoard(false);
+        setCompanySubpage(null);
+        setActive(null);
+        setShowIntro(false);
+      }, 20_000);
+    };
+
+    const activityEvents = ['pointerdown', 'pointermove', 'keydown', 'touchstart', 'click'];
+    activityEvents.forEach((eventName) => {
+      window.addEventListener(eventName, resetInactivityTimer, { passive: true });
+    });
+    resetInactivityTimer();
+
+    return () => {
+      window.clearTimeout(inactivityTimer);
+      activityEvents.forEach((eventName) => {
+        window.removeEventListener(eventName, resetInactivityTimer);
+      });
+    };
+  }, [showIntro]);
+
   function openBoard() {
     setShowBoard(true);
   }

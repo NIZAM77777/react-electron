@@ -138,7 +138,7 @@ function ServicesScreen({ onSelectDetail }) {
 
       <div className="services-grid">
         {services.map((s) => (
-          <button key={s.img} className="service-item anim" onClick={() => onSelectDetail(s)}>
+          <button key={s.img} className={`service-item service-item-${s.img} anim`} onClick={() => onSelectDetail(s)}>
             <span className="service-icon">
               <img
                 className={['project-cargo', 'tug'].includes(s.img) ? undefined : 'service-icon-clarity'}
@@ -498,7 +498,7 @@ function FacilitiesScreen({ onSelectDetail }) {
 
       <div className="facilities-grid">
         {facilities.map((f) => (
-          <button key={f.img} className="facility-item anim" onClick={() => onSelectDetail(f)}>
+          <button key={f.img} className={`facility-item facility-item-${f.img} anim`} onClick={() => onSelectDetail(f)}>
             <span className="facility-icon-box">
               {f.icon ? (
                 <img className="facility-icon" src={f.icon} alt="" draggable="false" />

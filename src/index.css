@@ -139,13 +139,8 @@ button:focus-visible {
 .bar-button {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: 12px;
-  /* Larger invisible touch target; icon and label remain unchanged. */
-  min-width: 112px;
-  min-height: 56px;
-  padding: 12px 18px;
-  margin: -12px -18px;
+  padding: 6px 0;
   border: 0;
   background: none;
   cursor: pointer;
@@ -1706,11 +1701,6 @@ html, body, #root {
 .facility-photo-screen .fleet-detail-nav,
 .service-detail-video-screen .fleet-detail-nav {
   top: 34px;
-  /* Larger invisible touch target; preserve the visible control size. */
-  min-width: 112px;
-  min-height: 56px;
-  padding: 14px 18px;
-  margin-top: -14px;
   gap: 12px;
   color: #fff;
   font-size: 15px;

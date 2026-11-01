@@ -516,9 +516,16 @@ html, body, #root {
   height: 130px;
 } */
 
+.service-item-tug .service-icon {
+  width: 150px;
+  height: 150px;
+}
+
 .service-item-tug .service-icon img {
-  width: 130px;
-  height: 130px;
+  width: 150px;
+  height: 150px;
+  max-width: none;
+  max-height: none;
   object-fit: contain;
 }
 

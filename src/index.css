@@ -512,26 +512,16 @@ html, body, #root {
 /* TOWAGE SERVICES ICON CONTROLS — only affects the towage icon.
    Increase icon size here; the label size and position are controlled separately below. */
 .service-item-tug {
-  --towage-icon-size: 150px; /* Change icon size only */
-  --towage-item-x: 0px;      /* Move icon and label left/right together */
-  --towage-item-y: 0px;      /* Move icon and label up/down together */
-  --towage-icon-x: 0px;      /* Fine-tune icon left/right independently */
-  --towage-icon-y: 0px;      /* Fine-tune icon up/down independently */
-  --towage-label-x: 0px;     /* Fine-tune label left/right independently */
-  --towage-label-y: -26px;   /* Fine-tune label up/down independently */
-  position: relative;
+  --towage-icon-size: 150px; /* Increase this value to make the icon larger */
+  --towage-item-x: 0px;      /* Move the whole towage item left/right */
+  --towage-item-y: 0px;      /* Move the whole towage item up/down */
   transform: translate(var(--towage-item-x), var(--towage-item-y));
 }
 
-/* Keep the icon out of normal layout flow so resizing it never pushes the label. */
 .service-item-tug .service-icon {
-  position: absolute;
-  left: 50%;
-  top: 0;
   width: var(--towage-icon-size);
   height: var(--towage-icon-size);
-  flex: none;
-  transform: translate(calc(-50% + var(--towage-icon-x)), var(--towage-icon-y));
+  flex: 0 0 var(--towage-icon-size);
 }
 
 .service-item-tug .service-icon img {
@@ -575,12 +565,8 @@ html, body, #root {
    two-line OFFSHORE OIL & GAS FIELD SUPPORT label beside it. */
 /* TOWAGE SERVICES LABEL CONTROLS — these settings do not change the icon size. */
 .service-item-tug .service-label {
-  position: absolute;
-  top: 150px; /* Fixed label anchor: keep this unchanged when resizing the icon */
-  left: 50%;
-  margin-top: 6px;
-  font-size: 19px; /* Change only the text size */
-  transform: translate(calc(-50% + var(--towage-label-x)), var(--towage-label-y));
+  font-size: 19px;                    /* Change only the text size */
+  transform: translate(0px, -26px);   /* Move text: first value = left/right, second = up/down */
 }
 /* FLEET PAGE (reuses .services-page, .services-rule, .services-sub for the title) */
 

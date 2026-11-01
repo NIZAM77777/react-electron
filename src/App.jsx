@@ -1152,42 +1152,18 @@ export default function App() {
     setShowIntro(false);
   }
 
-  // Display the custom pointer with reduced mouse sensitivity.
+  // Display the image from public/images/pointer/pointer.png as the custom mouse pointer.
   useEffect(() => {
-    let lastMouseX = null;
-    let lastMouseY = null;
-    let pointerX = -100;
-    let pointerY = -100;
-    const pointerSensitivity = 0.5; // 0.5 = the custom pointer moves half the physical mouse distance.
-
     const handlePointerMove = (event) => {
       if (event.pointerType && event.pointerType !== 'mouse') {
         setPointerPosition((current) => ({ ...current, visible: false }));
-        lastMouseX = null;
-        lastMouseY = null;
         return;
       }
-
-      if (lastMouseX === null || lastMouseY === null) {
-        // Align once when the mouse first appears, then apply reduced sensitivity to movement.
-        pointerX = event.clientX;
-        pointerY = event.clientY;
-      } else {
-        pointerX += (event.clientX - lastMouseX) * pointerSensitivity;
-        pointerY += (event.clientY - lastMouseY) * pointerSensitivity;
-      }
-
-      lastMouseX = event.clientX;
-      lastMouseY = event.clientY;
-      setPointerPosition({ x: pointerX, y: pointerY, visible: true });
+      setPointerPosition({ x: event.clientX, y: event.clientY, visible: true });
     };
-
     const handlePointerLeave = () => {
       setPointerPosition((current) => ({ ...current, visible: false }));
-      lastMouseX = null;
-      lastMouseY = null;
     };
-
     window.addEventListener('pointermove', handlePointerMove);
     document.addEventListener('pointerleave', handlePointerLeave);
     return () => {

@@ -1171,7 +1171,7 @@ export default function App() {
     setShowIntro(false);
   }
 
-  // Return to the main home menu after 20 seconds without user interaction.
+  // Return to the intro video after 60 seconds without user interaction.
   useEffect(() => {
     if (showIntro) return undefined;
 
@@ -1184,7 +1184,7 @@ export default function App() {
   setCompanySubpage(null);
   setActive(null);
   setShowIntro(true);
-}, 15_000);
+}, 60_000);
     };
 
     const activityEvents = ['pointerdown', 'pointermove', 'keydown', 'touchstart', 'click'];

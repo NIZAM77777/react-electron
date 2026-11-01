@@ -2562,7 +2562,8 @@ html, body, #root {
   pointer-events: none;
   transform: translate(-10%, -10%) scale(1);
   transform-origin: top left;
-  transition: opacity 160ms ease, transform 160ms ease;
+  /* Smooth the custom pointer's movement so it feels slower and less abrupt. */
+  transition: left 140ms ease-out, top 140ms ease-out, opacity 160ms ease, transform 160ms ease;
   will-change: left, top, transform;
 }
 

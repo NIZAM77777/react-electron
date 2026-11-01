@@ -1272,7 +1272,14 @@ export default function App() {
               ) : active ? (
                 <DetailScreen section={active} />
               ) : (
-                <HomeScreen onSelect={go} />
+                <>
+                  <HomeScreen onSelect={go} />
+                  <div className="tap-to-explore" aria-hidden="true">
+                    <span className="tap-to-explore-line" />
+                    <span className="tap-to-explore-text">TAP TO EXPLORE</span>
+                    <span className="tap-to-explore-line" />
+                  </div>
+                </>
               )}
             </div>
           </>

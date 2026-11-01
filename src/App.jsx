@@ -1013,7 +1013,7 @@ function IntroScreen({ onEnter }) {
       <video className="intro-video" autoPlay muted loop playsInline preload="auto">
         <source src="./videos/intro.mp4" type="video/mp4" />
       </video>
-      <span className="intro-tap-to-explore" aria-hidden="true">TAP TO EXPLORE</span>
+      <span className="intro-tap-to-explore" aria-hidden="true">CLICK TO CONTINUE</span>
     </button>
   );
 }

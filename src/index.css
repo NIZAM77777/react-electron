@@ -141,12 +141,11 @@ button:focus-visible {
   align-items: center;
   justify-content: center;
   gap: 12px;
-  /* Broad invisible hit area across each top corner. */
-  width: 24%;
+  /* Larger invisible touch target; icon and label remain unchanged. */
   min-width: 112px;
-  min-height: 112px;
-  padding: 28px 0;
-  margin: -28px 0;
+  min-height: 56px;
+  padding: 12px 18px;
+  margin: -12px -18px;
   border: 0;
   background: none;
   cursor: pointer;
@@ -160,15 +159,6 @@ button:focus-visible {
 .bar-button:hover {
   opacity: 0.8;
   transform: translateY(-2px);
-}
-
-/* Keep the visible labels in place while making the full top-corner zones tappable. */
-.top-bar .bar-button:first-child {
-  justify-content: flex-start;
-}
-
-.top-bar .bar-button:last-child {
-  justify-content: flex-end;
 }
 
 /* LOGO */

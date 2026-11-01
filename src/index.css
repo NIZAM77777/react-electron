@@ -2381,12 +2381,13 @@ html, body, #root {
 .service-detail-points-service-tug {
   --service-points-top: 30%;
   --service-points-bottom: auto;
+  /* Equal side margins center the two-point section horizontally. */
   --service-points-left: 12.5%;
-  --service-points-right: 10%;
+  --service-points-right: 12.5%;
   --service-points-gap: 140px;
   --service-points-line-height: 1.6;
   --service-points-transform: none;
-  --service-points-justify: flex-start;
+  --service-points-justify: center;
 }
 
 

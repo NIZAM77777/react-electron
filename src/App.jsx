@@ -1067,8 +1067,6 @@ export default function App() {
   const [activeFleet, setActiveFleet] = useState(null);
   const [showBoard, setShowBoard] = useState(false);
   const [companySubpage, setCompanySubpage] = useState(null);
-  const [showLanding, setShowLanding] = useState(true);
-  const [showIntro, setShowIntro] = useState(false);
   const [pointerPosition, setPointerPosition] = useState({ x: -100, y: -100, visible: false });
   const screenRef = useRef(null);
   const stageRef = useRef(null);
@@ -1152,26 +1150,10 @@ export default function App() {
     setShowBoard(false);
     setCompanySubpage(null);
     setActive(null);
-    setShowIntro(false);
-    setShowLanding(true);
-  }
-
-  function openIntroVideo() {
-    setActiveFleet(null);
-    setShowBoard(false);
-    setCompanySubpage(null);
-    setActive(null);
-    setShowLanding(false);
-    setShowIntro(true);
   }
 
   function openHome() {
-    setActiveFleet(null);
-    setShowBoard(false);
-    setCompanySubpage(null);
-    setActive(null);
-    setShowLanding(false);
-    setShowIntro(false);
+    goToLanding();
   }
 
   // Display the image from public/images/pointer/pointer.png as the custom mouse pointer.
@@ -1194,8 +1176,7 @@ export default function App() {
     };
   }, []);
 
-  // Return to the landing screen after 60 seconds without user interaction,
-  // including while the intro video screen is displayed.
+  // Return to the four-icon main menu after 60 seconds without user interaction.
   useEffect(() => {
     let inactivityTimer;
     const resetInactivityTimer = () => {
@@ -1205,8 +1186,6 @@ export default function App() {
         setShowBoard(false);
         setCompanySubpage(null);
         setActive(null);
-        setShowIntro(false);
-        setShowLanding(true);
       }, 60_000);
     };
 
@@ -1222,7 +1201,7 @@ export default function App() {
         window.removeEventListener(eventName, resetInactivityTimer);
       });
     };
-  }, [showIntro]);
+  }, []);
 
   function openBoard() {
     setShowBoard(true);
@@ -1245,17 +1224,12 @@ export default function App() {
       <Background />
 
       <div className="stage" ref={stageRef}>
-        {showLanding ? (
-          <LandingScreen onEnter={openIntroVideo} />
-        ) : showIntro ? (
-          <IntroScreen onEnter={openHome} />
-        ) : (
-          <>
+        <>
             {!activeFleet && !showBoard && (
               <header className="top-bar">
                 <button
                   className="bar-button"
-                  onClick={() => (active ? go(null) : openIntroVideo())}
+                  onClick={() => go(null)}
                   aria-label="Return"
                 >
                   <ChevronLeft size={26} strokeWidth={1.5} />
@@ -1301,8 +1275,7 @@ export default function App() {
 <HomeScreen onSelect={go} />
               )}
             </div>
-          </>
-        )}
+        </>
       </div>
     </main>
   );
